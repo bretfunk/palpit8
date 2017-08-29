@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
+gem 'jquery-rails'
 gem 'omniauth-twitch'
 gem 'faraday'
 gem 'figaro'
@@ -29,6 +30,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'awesome_print'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -42,8 +44,14 @@ group :test do
 end
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'faker'
+  gem 'launchy'
+  gem 'selenium-webdriver'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'shoulda-matchers'
 end
 
 group :development do

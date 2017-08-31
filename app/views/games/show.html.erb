@@ -1,0 +1,6 @@
+<h1><%= @streams.first.game.name %></h1><h3>Follow <%= "<3" %></h3><br>
+<h4>Live Channels</h4><h4>Videos</h4><h4>Clips</h4>
+<% @streams.each do |stream| %>
+  <%= stream.name %>
+  <%= stream.viewers %>
+<% end %>

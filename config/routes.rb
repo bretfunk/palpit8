@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :messages
   resources :chatrooms, param: :slug
+  resources :games, only: [:index, :show]
 
   mount ActionCable.server => '/cable'
 end

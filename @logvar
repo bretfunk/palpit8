@@ -1,3 +1,0 @@
-# Logfile created on 2017-08-30 13:55:53 -0600 by logger.rb/56815
-D, [2017-08-30T13:58:25.242279 #2239] DEBUG -- : :tmi.twitch.tv NOTICE * :Improperly formatted auth
-D, [2017-08-30T13:58:25.243198 #2239] DEBUG -- : Sorry, but our TWITCHCLIENT is in another castle :(

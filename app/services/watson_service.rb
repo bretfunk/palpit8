@@ -7,17 +7,22 @@ class WatsonService
    @conn.basic_auth("#{ENV["USERNAME"]}", "#{ENV["TOKKEN"]}")
   end
 
-  def read_chat
+  def watson_tone
+   @chat_data = File.read('log/twitch_chat.log')
     response = @conn.post do |req|
       req.headers['Content-Type'] = 'text/plain;charset=utf-8'
-      req.body = "Happy happy happy sad sad angry"
+      req.body = @chat_data
     end
-    parse(response)
-    binding.pry
+    %x(cat /dev/null > log/twitch_chat.log)
+    @parsed_response = parse(response)
   end
 
-  def watson_tone
-    parse(conn.get("tone?text= I am so happy and so joyful I love this")) 
+  def captured_data
+    @parsed_response
+  end
+
+  def self.read_chat
+
   end
 
   def parse(response)

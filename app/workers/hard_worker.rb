@@ -1,7 +1,7 @@
-require 'twitch/chat'
+class HardWorker
+  include Sidekiq::Worker
 
-class TwitchChatService
-  def initialize
+  def perform
     chat_log = Twitch::Chat::Client.new(channel: 'shroud', nickname: 'rocketappliances1705', password: ENV["OAUTH_CHAT"], output: 'log/twitch_chat.log')
     chat_log.run!
   end

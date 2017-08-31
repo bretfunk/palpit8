@@ -1,0 +1,2 @@
+class Kj < ApplicationRecord
+end

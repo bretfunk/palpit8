@@ -4,6 +4,12 @@ class HomeController < ApplicationController
   end
 
   def new
-    @mood_data = WatsonService.new.watson_tone
+  end
+
+  def refresh_part
+    @data = WatsonService.new.watson_tone('log/twitch_chat.log')
+    respond_to do |format|
+      format.js
+    end
   end
 end

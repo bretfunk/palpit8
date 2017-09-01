@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   has_many :messages
+  has_many :user_roles
+  has_many :roles, through: :user_roles
   has_many :chatrooms, through: :messages
   validates :username, presence: true, uniqueness: true
-  has_secure_password
+  #has_secure_password
 
   def self.find_or_create_by_auth(auth)
     user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid'])

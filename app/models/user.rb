@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+
   def self.find_or_create_by_auth(auth)
     user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid'])
     user.email = auth['info']['email']
@@ -8,5 +10,13 @@ class User < ApplicationRecord
 
     user.save
     user
+  end
+
+  def admin?
+    roles.exists?(name: "admin")
+  end
+
+  def registered_user?
+    roles.exists?(name: "registered_user")
   end
 end

@@ -3,8 +3,6 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.web_socket_server_url = "wss://palpit8.herokuapp.com/cable"
-  config.action_cable.allow_request_origins = ['https://palpit8.herokuapp.com', 'http://palpit8.herokuapp.com']
 
 
   # Eager load code on boot. This eager loads most of Rails and

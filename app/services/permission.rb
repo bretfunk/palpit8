@@ -40,3 +40,4 @@ class Permission
     return true if controller == "sessions"
     return true if controller == "games" && action.in?(%w(index show))
   end
+end

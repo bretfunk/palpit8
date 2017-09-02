@@ -7,4 +7,3 @@ test:
 production:
   adapter: redis
   url: redis://redistogo:158891f1c7b85d32de7c0d3f88a21c13@angelfish.redistogo.com:11867
-  password: 158891f1c7b85d32de7c0d3f88a21c13

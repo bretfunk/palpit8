@@ -3,6 +3,67 @@ class TwitchService
     @conn = Faraday.new("https://api.twitch.tv")
   end
 
+  def self.current_users_profile_info
+    new.current_users_profile_info
+  end
+
+  def self.users_channel_follows(username)
+    new.users_channel_follows(username)
+  end
+
+  def self.user_follow_streamers_channel(username)
+    new.user_follow_streamers_channel(username)
+  end
+
+  def self.user_unfollow_streamers_channel(username, channel_name)
+    new.user_unfollow_streamers_channel(username, channel_name)
+  end
+
+  def self.current_users_channel_info
+    new.current_users_channel_info
+  end
+
+  def self.channel_info(channel_name)
+    new.channel_info(channel_name)
+  end
+
+  def self.channel_followers(channel_name)
+    new.channel_followers(channel_name)
+  end
+
+  def self.channel_subscribers(channel_name)
+    new.channel_subscribers(channel_name)
+  end
+
+  def self.search_channels(query)
+    new.search_channels(query)
+  end
+
+  def self.search_streams(query)
+    new.search_channels(query)
+  end
+
+  def self.search_games(query)
+    new.search_games(query)
+  end
+
+  def self.stream_for_channel(channel_name)
+    new.stream_for_channel(channel_name)
+  end
+
+  def self.streams_for_game(game_name)
+    new.streams_for_game(game_name)
+  end
+
+  def self.streams_summary_for_game(game_name)
+    new.streams_for_game(game_name)
+  end
+
+  def self.current_users_followed_streams
+    new.current_users_followed_streams
+  end
+
+  private
   #user info requests
 
   def current_users_profile_info
@@ -14,6 +75,15 @@ class TwitchService
     user_info = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def current_users_channel_info
+    response = @conn.get do |req|
+      req.url                      = "/kraken/channel"
+      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
+      req.headers['Authorization'] = "OAuth #{current_user.token}"
+    end
+    channel_info = JSON.parse(repsonse.body, symbolize_names: true)
+  end
+
   def users_channel_follows(username)
     response = @conn.get do |req|
       req.url                      = "/kraken/users/#{username}/follows/channels"
@@ -21,6 +91,15 @@ class TwitchService
       req.headers['Authorization'] = "OAuth #{current_user.token}"
     end
     follow_info = JSON.parse(repsonse.body, symbolize_names: true)
+  end
+
+  def users_followed_streams
+    response = @conn.get do |req|
+      req.url                      = "/kraken/streams/followed"
+      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
+      req.headers['Authorization'] = "OAuth #{current_user.token}"
+    end
+    followed_streams = JSON.parse(repsonse.body, symbolize_names: true)
   end
 
   def user_follow_streamers_channel(username, channel_name)
@@ -39,15 +118,6 @@ class TwitchService
       req.headers['Authorization'] = "OAuth #{current_user.token}"
     end
     follow_success = JSON.parse(response.body, symbolize_names: true)
-  end
-
-  def users_channel_info(username)
-    response = @conn.get do |req|
-      req.url                      = "/kraken/channel"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{current_user.token}"
-    end
-    channel_info = JSON.parse(repsonse.body, symbolize_names: true)
   end
 
   #channel requests
@@ -135,14 +205,5 @@ class TwitchService
       req.headers['Authorization'] = "OAuth #{current_user.token}"
     end
     streams_summary = JSON.parse(repsonse.body, symbolize_names: true)
-  end
-
-  def users_followed_streams
-    response = @conn.get do |req|
-      req.url                      = "/kraken/streams/followed"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{current_user.token}"
-    end
-    followed_streams = JSON.parse(repsonse.body, symbolize_names: true)
   end
 end

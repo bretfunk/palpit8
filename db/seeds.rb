@@ -2,9 +2,6 @@
 
  GAMES.each do |game|
    Chatroom.create(topic: game)
- end
-
- GAMES.each do |game|
    Game.create(name: game)
  end
 

@@ -20,6 +20,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'awesome_print'
 gem 'redis', '~> 3.0'
+gem 'faker'
 
 group :test do
   gem 'vcr'
@@ -31,7 +32,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'capybara'
-  gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

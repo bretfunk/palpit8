@@ -1,5 +1,5 @@
 App.tones = App.cable.subscriptions.create('ToneChannel', {
   received: function(data) {
-    return $('#tones').append("<p>" + data.tone_data + "</p>")
+    alert(data.tone_data[:tone_data][0][:score]);
   }
 });

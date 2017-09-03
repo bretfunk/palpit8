@@ -1,11 +1,18 @@
 # README
 
+Warning, this application could contain material unsuitable for some audiences.  Viewer discresion is advised.
+
+About:
+
+Palpit8 is
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
 * Ruby version
+2.4.1
 
 * System dependencies
 

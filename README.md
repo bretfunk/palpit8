@@ -1,6 +1,6 @@
 # README
 
-Warning, this application could contain material unsuitable for some audiences.  Viewer discresion is advised.
+Warning, this application could contain material unsuitable for some audiences.  Viewer discretion is advised.
 
 About:
 

@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory :message do
-    content "MyString"
-    chatroom nil
-    user nil
+    content Faker::Hacker.say_something_smart
   end
 end

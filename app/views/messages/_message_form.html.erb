@@ -4,5 +4,7 @@
 
   <%= f.hidden_field :chatroom_id, value: chatroom.id %>
 
-  <%= f.submit 'Send', class: 'btn btn-primary', data: {send: 'message'} %>
+  <%#= f.submit 'Send', class: 'btn btn-primary', data: {send: 'message'} %>
 <% end %>
+
+<a href="#" class="btn btn-primary" data-send="message">Send</a>

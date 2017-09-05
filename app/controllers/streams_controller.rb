@@ -1,4 +1,4 @@
-class StreamController < ApplicationController
+class StreamsController < ApplicationController
 
   def show
     @stream = Stream.new

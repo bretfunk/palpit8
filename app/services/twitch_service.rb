@@ -80,7 +80,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    channel_info = JSON.parse(repsonse.body, symbolize_names: true)
+    channel_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def users_channel_follows(user_token, username)
@@ -89,7 +89,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    follow_info = JSON.parse(repsonse.body, symbolize_names: true)
+    follow_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def users_followed_streams(user_token)
@@ -98,7 +98,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    followed_streams = JSON.parse(repsonse.body, symbolize_names: true)
+    followed_streams = JSON.parse(response.body, symbolize_names: true)
   end
 
   def user_follow_streamers_channel(user_token, username, channel_name)
@@ -127,7 +127,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    channel_info = JSON.parse(repsonse.body, symbolize_names: true)
+    channel_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def channel_followers(user_token, channel_name)
@@ -136,7 +136,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    channels_follower_info = JSON.parse(repsonse.body, symbolize_names: true)
+    channels_follower_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def channel_subscribers(user_token, channel_name)
@@ -145,7 +145,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    channels_subscriber_info = JSON.parse(repsonse.body, symbolize_names: true)
+    channels_subscriber_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   #search requests
@@ -156,7 +156,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    search_results = JSON.parse(repsonse.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   def search_streams(user_token, query)
@@ -165,7 +165,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    search_results = JSON.parse(repsonse.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   def search_games(user_token, query)
@@ -174,7 +174,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    search_results = JSON.parse(repsonse.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   #stream requests
@@ -185,7 +185,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    stream = JSON.parse(repsonse.body, symbolize_names: true)
+    stream = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_for_game(user_token, game_name)
@@ -194,7 +194,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    streams = JSON.parse(repsonse.body, symbolize_names: true)
+    streams = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_summary_for_game(user_token, game_name)
@@ -203,6 +203,6 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    streams_summary = JSON.parse(repsonse.body, symbolize_names: true)
+    streams_summary = JSON.parse(response.body, symbolize_names: true)
   end
 end

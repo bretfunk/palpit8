@@ -1,56 +1,67 @@
 <div class="cover_photo">
-  <img src="<%= @streamer.cover_picture %>" alt="Profile Cover Picture" height="10%" width="100%">
+  <img src="<%= @streamer.banner_picture %>" alt="Profile Cover Picture" height="5%" width="100%">
 </div>
 
 <div class="streamers_tb toolbar">
-  <div class="navbar-fixed">
+  <div class="navbar">
      <nav>
        <div class="nav-wrapper">
-        <img src="<%= @streamer.profile_pic %>" alt="Profile Picture" height="10%" width="100%">
-        <ul class="left hide-on-med-and-down">
-          <li>
-            <h1><strong><%= @streamer.name %></strong></h1>
-            <i class="material-icons right">verified_user</i>
-          </li>
-        </ul>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <i class="material-icons left">favorite</i>
-            <h3>Followers <%= @streamer.followers %></h3>
-          </li>
-          <li>
-            <i class="material-icons left">star</i>
-            <h3>Subscribers <%= @streamer.subscribers %></h3>
-          </li>
-          <li>
-            <a class="waves-effect waves-light btn" href="<%= follow_path(@stream.name) %>"><i class="material-icons left">favorite_border</i>Follow</a>
-          </li>
-        </ul>
+        <div class="row">
+          <ul class="left hide-on-med-and-down">
+            <li class="col s2 push-s1">
+              <img src="<%= @streamer.profile_pic %>" alt="Profile Picture" height="45px" width="45px">
+            </li>
+            <li class="col s4 push-s4">
+              <strong><%= @streamer.name %></strong>
+            </li>
+            <li class="col s1 push-s6">
+              <i class="material-icons right">verified_user</i>
+            </li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <i class="material-icons left">favorite</i>
+              Followers: <strong><%= @streamer.followers %></strong>
+            </li>
+            <li>
+              <a class="waves-effect waves-light btn" href="<%= new_follow_path(@streamer.name) %>"><i class="material-icons left">favorite_border</i>Follow</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
 </div>
 
-<div class="container">
-  <div class="stream">
-    <%= @streamer.stream %>
-    <div class="row">
-      <div class="col s1">
-        <img src="<%= @streamer.game_image %>" alt="Game Thumbnail" height="42" width="60">
-      </div>
-      <div class="col s5">
-        <h3><%= @streamer.stream_name %></h3><br>
-        <i class="material-icons left">games</i>
-        <h4><%= @streamer.game_name %></h4>
-      </div>
-      <div class="col s2 offset-s2">
-        <i class="material-icons left">remove_red_eye</i>
-        <h4>Watching Now: <%= @streamer.watching_now %></h4>
-      </div>
-      <div class="col s2">
-        <i class="material-icons left">person</i>
-        <h4>Total Views: <%= @streamer.total_views %></h4>
-      </div>
-    </div>
+<div class="center-align">
+  <iframe
+    src="http://player.twitch.tv/?channel=<%= @streamer.channel_name %>"
+    height="720"
+    width="1280"
+    frameborder="0"
+    scrolling="no"
+    allowfullscreen="true">
+  </iframe>
+</div>
+
+<div class="divider"></div>
+
+<div class="row stream_info">
+  <div class="col s1 push-s1">
+    <img src="<%= @streamer.game_image %>" alt="Game Thumbnail" height="42" width="60">
+  </div>
+  <div class="col s5 push-s1">
+    <%= @streamer.stream_name %><br>
+    <i class="material-icons left">games</i>
+    <%= @streamer.game_name %>
+  </div>
+  <div class="col s2">
+    <i class="material-icons left">remove_red_eye</i>
+    Watching Now: <%= @streamer.watching_now %>
+  </div>
+  <div class="col s2">
+    <i class="material-icons left">person</i>
+    Total Views: <%= @streamer.total_views %>
   </div>
 </div>
+<div class="divider"></div>

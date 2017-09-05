@@ -4,7 +4,7 @@ class StreamersController < ApplicationController
   end
 
   def show
-    @streamer = Streamer.compile(current_user.token, params[:id])
+    @streamer = Streamer.new("vmgryl3yotuzd472lqye7m96nwhtyn", params[:id])
   end
 
 end

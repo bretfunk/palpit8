@@ -19,9 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize!
-    unless authorized?
-      redirect_to root_url, danger: "You are not authorized to visit this page"
-    end
+    redirect_to root_url unless authorized?
   end
 
   def authorized?

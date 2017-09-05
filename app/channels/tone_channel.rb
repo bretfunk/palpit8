@@ -1,5 +1,5 @@
 class ToneChannel < ApplicationCable::Channel
   def subscribed
-    stream_from 'tones'
+    stream_from 'tone'
   end
 end

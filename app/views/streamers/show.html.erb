@@ -1,0 +1,28 @@
+<div class="cover_photo">
+  <img src="<%= @streamer.cover_picture %>" alt="Profile Cover Picture" height="10%" width="100%">
+</div>
+
+<div class="streamers_tb toolbar">
+  <img src="<%= @streamer.profile_pic %>" alt="Profile Picture" height="10%" width="100%">
+  <%= @streamer.profile_pic %>
+  <h1><strong><%= @streamer.name %></strong></h1>
+  <h3>Followers <%= @streamer.followers %></h3>
+  <h3>Subscribers <%= @streamer.subscribers %></h3>
+  <%= button_to "Follow", follow_path %>
+</div>
+
+<div class="stream">
+  <%= @streamer.stream %>
+
+  <div class="stream_tb toolbar_left">
+    <img src="<%= @streamer.game_image %>" alt="Game Thumbnail" height="42" width="60">
+    <h3><%= @streamer.stream_name %></h3><br>
+    <h4><%= @streamer.game_name %></h4>
+  </div>
+
+  <div class="stream_tb toolbar_right">
+    <h4>Watching Now: <%= @streamer.watching_now %></h4>
+    <h4>Total Views: <%= @streamer.total_views %></h4>
+  </div>
+
+</div>

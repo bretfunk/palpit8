@@ -4,6 +4,6 @@ App.tones = App.cable.subscriptions.create('ToneChannel', {
   },
 
   renderTone: function(data) {
-    return "<p>" + data.tone_data + "/p";
+    return "<p>" + data.tone_data + "</p>";
   }
 });

@@ -4,7 +4,6 @@ class TwitchService
   end
 
   def self.current_users_profile_info(user_token)
-    binding.pry
     new.current_users_profile_info
   end
 

@@ -10,13 +10,13 @@ RSpec.feature 'User sends a chat message' do
                         "email"=>"michael.sagapolutele@yahoo.com",
                         "token"=>"123m23jwdnfsou4wkm22o3",
                         })
-    game = create(:game)
-    chatroom = create(:chatroom, topic: game.name.parameterize)
+    game = create(:game, name: "starcraft-2")
+    create(:chatroom, topic: game.name.parameterize)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user)
     .and_return(user)
 
-    visit(game_path(game))
+    visit("/games/#{game.slug}")
 
     fill_in 'message[content]', with: 'Something'
     click_on 'Send'

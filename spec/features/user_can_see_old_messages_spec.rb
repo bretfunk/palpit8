@@ -10,14 +10,14 @@ RSpec.feature 'User visits a game page' do
                         "email"=>"michael.sagapolutele@yahoo.com",
                         "token"=>"123m23jwdnfsou4wkm22o3",
                         })
-    game = create(:game)
+    game = create(:game, name: "starcraft-2")
     chatroom = create(:chatroom, topic: game.name.parameterize)
     chatroom.messages << create_list(:message, 3, chatroom: chatroom, user: user)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user)
     .and_return(user)
 
-    visit(game_path(game))
+    visit("/games/#{game.slug}")
 
     expect(page).to have_content chatroom.messages.first.content
   end

@@ -52,4 +52,16 @@ describe TwitchService do
       end
     end
   end
+
+  context "#users_follow_streamers_channel" do
+    it "retrieves a users followers streams" do
+      VCR.use_cassette("#users_follow_streamers_channel") do
+        
+        streams_info = TwitchService.new.user_follow_streamers_channel(ENV['TOKEN'], 'honorshard', 'lirik')
+
+        expect(streams_info.class).to eq(Hash)
+        expect(streams_info).to have_key(:created_at)
+      end
+    end
+  end
 end

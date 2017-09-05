@@ -5,6 +5,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = Game.find_by(slug: params[:slug])
   end
 end

@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: twitch_practice_development
+  database: palpit8
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: twitch_practice_test
+  database: palpit8
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: twitch_practice_production
-  username: twitch_practice
-  password: <%= ENV['TWITCH_PRACTICE_DATABASE_PASSWORD'] %>
+  database: palpit8_production
+  username: palpit8
+  password: <%= ENV['PALPIT8_DATABASE_PASSWORD'] %>

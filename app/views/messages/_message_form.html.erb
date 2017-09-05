@@ -1,0 +1,14 @@
+<%= form_for message, remote: true, authenticity_token: true do |f| %>
+  <%= f.label :your_message %>:
+  <%= f.text_area :content, class: 'form-control', data: {textarea: "message"} %>
+
+  <%= f.hidden_field :chatroom_id, value: chatroom.id %>
+
+  <%#= f.submit 'Send', class: 'btn btn-primary', data: {send: 'message'} %>
+<% end %>
+
+<% if current_user %>
+<a href="#" class="btn btn-primary" data-send="message">Send</a>
+<% else %>
+  <%= link_to "Login to Chat", "/auth/twitch"  %>
+<% end %>

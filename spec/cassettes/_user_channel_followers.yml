@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitch.tv/kraken/users/honorshard/follows/channels
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Client-Id:
+      - 7ys61xpn2rnyzibtuuf05le3utxgts
+      Authorization:
+      - OAuth vmgryl3yotuzd472lqye7m96nwhtyn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, private
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Twitch-Trace-Id:
+      - 850e5db6265d0126e165e3ad1a42173f
+      X-Ctxlog-Logid:
+      - 1-59af0213-2b9bc76d591c0a8a50d33d4c
+      Front-End-Https:
+      - 'on'
+      Timing-Allow-Origin:
+      - https://www.twitch.tv
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 05 Sep 2017 19:59:15 GMT
+      Content-Length:
+      - '3530'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_total":2,"_links":{"self":"https://api.twitch.tv/kraken/users/honorshard/follows/channels?direction=DESC\u0026limit=25\u0026sortby=created_at\u0026user=honorshard","next":"https://api.twitch.tv/kraken/users/honorshard/follows/channels?direction=DESC\u0026limit=25\u0026offset=25\u0026sortby=created_at\u0026user=honorshard"},"follows":[{"created_at":"2017-09-02T23:10:00Z","_links":{"self":"https://api.twitch.tv/kraken/users/honorshard/follows/channels/lirik"},"channel":{"mature":false,"status":"Lets
+        No-Life This Game - Twitter: @LIRIK ","broadcaster_language":"en","display_name":"LIRIK","game":"Destiny
+        2","language":"en","_id":23161357,"name":"lirik","created_at":"2011-06-27T18:34:45Z","updated_at":"2017-09-05T19:36:31Z","partner":true,"logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/lirik-profile_image-476e7a592cdfed74-300x300.png","video_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/lirik-channel_offline_image-af3bc6ef396c76ae-1920x1080.png","profile_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/lirik-profile_banner-cd63be39a747b629-480.png","profile_banner_background_color":"#221f1f","url":"https://www.twitch.tv/lirik","views":196078314,"followers":1799957,"_links":{"self":"https://api.twitch.tv/kraken/channels/lirik","follows":"https://api.twitch.tv/kraken/channels/lirik/follows","commercial":"https://api.twitch.tv/kraken/channels/lirik/commercial","stream_key":"https://api.twitch.tv/kraken/channels/lirik/stream_key","chat":"https://api.twitch.tv/kraken/chat/lirik","features":"https://api.twitch.tv/kraken/channels/lirik/features","subscriptions":"https://api.twitch.tv/kraken/channels/lirik/subscriptions","editors":"https://api.twitch.tv/kraken/channels/lirik/editors","teams":"https://api.twitch.tv/kraken/channels/lirik/teams","videos":"https://api.twitch.tv/kraken/channels/lirik/videos"},"delay":null,"banner":null,"background":null},"notifications":false},{"created_at":"2017-08-31T22:05:49Z","_links":{"self":"https://api.twitch.tv/kraken/users/honorshard/follows/channels/shroud"},"channel":{"mature":true,"status":"training
+        newbies  | Follow https://twitter.com/c9shroud","broadcaster_language":"en","display_name":"shroud","game":"PLAYERUNKNOWN''S
+        BATTLEGROUNDS","language":"en","_id":37402112,"name":"shroud","created_at":"2012-11-03T15:50:32Z","updated_at":"2017-09-05T19:36:34Z","partner":true,"logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/shroud-profile_image-850e059aee3d6bfa-300x300.jpeg","video_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/01f5ca6e0e437209-channel_offline_image-1920x1080.png","profile_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/c921e2b29e137572-profile_banner-480.png","profile_banner_background_color":null,"url":"https://www.twitch.tv/shroud","views":45859037,"followers":1233076,"_links":{"self":"https://api.twitch.tv/kraken/channels/shroud","follows":"https://api.twitch.tv/kraken/channels/shroud/follows","commercial":"https://api.twitch.tv/kraken/channels/shroud/commercial","stream_key":"https://api.twitch.tv/kraken/channels/shroud/stream_key","chat":"https://api.twitch.tv/kraken/chat/shroud","features":"https://api.twitch.tv/kraken/channels/shroud/features","subscriptions":"https://api.twitch.tv/kraken/channels/shroud/subscriptions","editors":"https://api.twitch.tv/kraken/channels/shroud/editors","teams":"https://api.twitch.tv/kraken/channels/shroud/teams","videos":"https://api.twitch.tv/kraken/channels/shroud/videos"},"delay":null,"banner":null,"background":null},"notifications":true}]}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 19:59:15 GMT
+recorded_with: VCR 3.0.3

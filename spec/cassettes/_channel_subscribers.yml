@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitch.tv/kraken/channels/lirik/subscriptions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Client-Id:
+      - 7ys61xpn2rnyzibtuuf05le3utxgts
+      Authorization:
+      - OAuth vmgryl3yotuzd472lqye7m96nwhtyn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '107'
+      Server:
+      - nginx
+      Status:
+      - 401 Unauthorized
+      X-Api-Version:
+      - '3'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - ''
+      Access-Control-Allow-Headers:
+      - ''
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Vary:
+      - Accept-Encoding
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - 3f46d178b31238c854647282aa5138a3
+      X-Varnish:
+      - '2013697085'
+      X-Mh-Cache:
+      - rails-varnish-api-aws-023b753137ece8991; M
+      Timing-Allow-Origin:
+      - https://www.twitch.tv
+      Date:
+      - Tue, 05 Sep 2017 21:48:37 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Unauthorized","status":401,"message":"Token invalid or missing
+        required scope"}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 21:48:37 GMT
+recorded_with: VCR 3.0.3

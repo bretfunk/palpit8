@@ -147,6 +147,7 @@ describe TwitchService do
 
         expect(stream.class).to eq(Hash)
         expect(stream[:stream]).to have_key(:_id)
+        expect(stream[:stream][:_id]).to eq(26187477776)
         expect(stream[:stream]).to have_key(:viewers)
       end
     end

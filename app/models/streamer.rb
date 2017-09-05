@@ -35,6 +35,7 @@ class Streamer
   end
 
   def cover_picture
+  end
 
   def followers
   end

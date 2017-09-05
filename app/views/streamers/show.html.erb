@@ -8,17 +8,22 @@
        <div class="nav-wrapper">
         <img src="<%= @streamer.profile_pic %>" alt="Profile Picture" height="10%" width="100%">
         <ul class="left hide-on-med-and-down">
-          <h1><strong><%= @streamer.name %></strong></h1>
+          <li>
+            <h1><strong><%= @streamer.name %></strong></h1>
+            <i class="material-icons right">verified_user</i>
+          </li>
         </ul>
         <ul class="right hide-on-med-and-down">
           <li>
+            <i class="material-icons left">favorite</i>
             <h3>Followers <%= @streamer.followers %></h3>
           </li>
           <li>
+            <i class="material-icons left">star</i>
             <h3>Subscribers <%= @streamer.subscribers %></h3>
           </li>
           <li>
-            <a class="waves-effect waves-light btn" href="<%= follow_path(@stream.name) %>"><i class="material-icons right">heart</i>Follow</a>
+            <a class="waves-effect waves-light btn" href="<%= follow_path(@stream.name) %>"><i class="material-icons left">favorite_border</i>Follow</a>
           </li>
         </ul>
       </div>
@@ -35,12 +40,15 @@
       </div>
       <div class="col s5">
         <h3><%= @streamer.stream_name %></h3><br>
+        <i class="material-icons left">games</i>
         <h4><%= @streamer.game_name %></h4>
       </div>
       <div class="col s2 offset-s2">
+        <i class="material-icons left">remove_red_eye</i>
         <h4>Watching Now: <%= @streamer.watching_now %></h4>
       </div>
       <div class="col s2">
+        <i class="material-icons left">person</i>
         <h4>Total Views: <%= @streamer.total_views %></h4>
       </div>
     </div>

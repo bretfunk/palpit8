@@ -1,5 +1,7 @@
 App.tones = App.cable.subscriptions.create('ToneChannel', {
   received: function(data) {
-    $('#tones_tag').append(data.tone_data)
+    var mood = data.tone_data
+    let words = $('.tones').text(mood)
+    $('.box').text(words)
   }
 });

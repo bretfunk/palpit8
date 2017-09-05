@@ -126,4 +126,29 @@ describe TwitchService do
       end
     end
   end
+
+  #context "#search_games" do
+    #it "searches games" do
+      #VCR.use_cassette("#search_games") do
+        
+        #games = TwitchService.new.search_games(ENV['TOKEN'], 'hearthstone')
+
+        #expect(games.class).to eq(Hash)
+
+      #end
+    #end
+  #end
+
+  context "#stream_for_channel" do
+    it "retrieves a stream by channel" do
+      VCR.use_cassette("#stream_for_channel") do
+        
+        stream = TwitchService.new.stream_for_channel(ENV['TOKEN'], 'lirik')
+
+        expect(stream.class).to eq(Hash)
+        expect(stream[:stream]).to have_key(:_id)
+        expect(stream[:stream]).to have_key(:viewers)
+      end
+    end
+  end
 end

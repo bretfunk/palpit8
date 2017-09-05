@@ -175,7 +175,8 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    search_results = JSON.parse(repsonse.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
   end
 
   #stream requests
@@ -186,7 +187,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    stream = JSON.parse(repsonse.body, symbolize_names: true)
+    stream = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_for_game(user_token, game_name)
@@ -195,7 +196,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    streams = JSON.parse(repsonse.body, symbolize_names: true)
+    streams = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_summary_for_game(user_token, game_name)

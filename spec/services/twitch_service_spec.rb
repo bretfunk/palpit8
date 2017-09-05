@@ -64,4 +64,17 @@ describe TwitchService do
       end
     end
   end
+  context "#channel_info" do
+    it "retrieves the channel info" do
+      VCR.use_cassette("#channel_info") do
+        
+        channel_info = TwitchService.new.channel_info(ENV['TOKEN'], 'lirik')
+
+        expect(channel_info.class).to eq(Hash)
+        expect(channel_info).to have_key(:name)
+        expect(channel_info).to have_key(:game)
+        expect(channel_info).to have_key(:status)
+      end
+    end
+  end
 end

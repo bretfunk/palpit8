@@ -33,6 +33,8 @@ describe TwitchService do
         follower_info = TwitchService.new.users_channel_follows(ENV['TOKEN'], 'honorshard')
 
         expect(follower_info.class).to eq(Hash)
+        expect(follower_info).to have_key(:follows)
+        expect(follower_info).to have_key(:_links)
       end
     end
   end

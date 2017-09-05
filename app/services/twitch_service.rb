@@ -91,7 +91,6 @@ class TwitchService
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
     follow_info = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
   end
 
   def users_followed_streams(user_token)

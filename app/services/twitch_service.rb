@@ -4,6 +4,7 @@ class TwitchService
   end
 
   def self.current_users_profile_info(user_token)
+    binding.pry
     new.current_users_profile_info
   end
 
@@ -78,9 +79,9 @@ class TwitchService
     response = @conn.get do |req|
       req.url                      "/kraken/channel"
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
+     req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    channel_info = JSON.parse(repsonse.body, symbolize_names: true)
+    channel_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def users_channel_follows(user_token, username)
@@ -89,7 +90,8 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    follow_info = JSON.parse(repsonse.body, symbolize_names: true)
+    follow_info = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
   end
 
   def users_followed_streams(user_token)

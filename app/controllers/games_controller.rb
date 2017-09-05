@@ -5,8 +5,8 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
-    @chatroom = Chatroom.find_by(topic: @game.name.parameterize)
+    @game = Game.find_by(slug: params[:name])
+    @chatroom = Chatroom.find_by(slug: @game.name.parameterize)
     @message = Message.new
   end
 end

@@ -205,6 +205,6 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    streams_summary = JSON.parse(repsonse.body, symbolize_names: true)
+    streams_summary = JSON.parse(response.body, symbolize_names: true)
   end
 end

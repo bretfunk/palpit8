@@ -165,4 +165,17 @@ describe TwitchService do
       end
     end
   end
+
+  context "#streams_for_game" do
+    it "retrieves summary for game" do
+      VCR.use_cassette("#streams_for_game") do
+        
+        stream3 = TwitchService.new.streams_summary_for_game(ENV['TOKEN'], 'hearthstone')
+
+        expect(stream3.class).to eq(Hash)
+        expect(stream3).to have_key(:channels)
+        expect(stream3).to have_key(:viewers)
+      end
+    end
+  end
 end

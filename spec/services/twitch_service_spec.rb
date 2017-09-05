@@ -38,4 +38,18 @@ describe TwitchService do
       end
     end
   end
+
+  context "#users_followed_streams" do
+    it "retrieves a users followed streams" do
+      VCR.use_cassette("#users_followed_streams") do
+        
+        followed_info = TwitchService.new.users_followed_streams(ENV['TOKEN'])
+        
+        expect(followed_info.class).to eq(Hash)
+        expect(followed_info).to have_key(:streams)
+        expect(followed_info[:streams][0]).to have_key(:game)
+        expect(followed_info[:streams][0]).to have_key(:viewers)
+      end
+    end
+  end
 end

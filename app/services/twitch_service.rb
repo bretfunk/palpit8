@@ -99,7 +99,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    followed_streams = JSON.parse(repsonse.body, symbolize_names: true)
+    followed_streams = JSON.parse(response.body, symbolize_names: true)
   end
 
   def user_follow_streamers_channel(user_token, username, channel_name)

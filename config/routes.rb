@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   root "home#index"
   get "/auth/:provider/callback", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
   get "/dashboard", to: "dashboard#show"
 
   resources :messages
   resources :chatrooms, param: :slug
-  resources :games, only: [:index, :show]
+  resources :games, param: :slug,  only: [:index, :show]
 
   mount ActionCable.server => '/cable'
 end

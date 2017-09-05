@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitch.tv/kraken/channels/lirik
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Client-Id:
+      - 7ys61xpn2rnyzibtuuf05le3utxgts
+      Authorization:
+      - OAuth vmgryl3yotuzd472lqye7m96nwhtyn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, private
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Twitch-Trace-Id:
+      - 7c10f1405aec088e5583779f0f49a477
+      X-Ctxlog-Logid:
+      - 1-59af0e4e-53b46fc432b765c71f959621
+      Front-End-Https:
+      - 'on'
+      Timing-Allow-Origin:
+      - https://www.twitch.tv
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 05 Sep 2017 20:51:26 GMT
+      Content-Length:
+      - '1420'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"mature":false,"status":"Lets No-Life This Game - Twitter: @LIRIK
+        ","broadcaster_language":"en","display_name":"LIRIK","game":"Destiny 2","language":"en","_id":23161357,"name":"lirik","created_at":"2011-06-27T18:34:45Z","updated_at":"2017-09-05T20:36:19Z","partner":true,"logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/lirik-profile_image-476e7a592cdfed74-300x300.png","video_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/lirik-channel_offline_image-af3bc6ef396c76ae-1920x1080.png","profile_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/lirik-profile_banner-cd63be39a747b629-480.png","profile_banner_background_color":"#221f1f","url":"https://www.twitch.tv/lirik","views":196115183,"followers":1800192,"_links":{"self":"https://api.twitch.tv/kraken/channels/lirik","follows":"https://api.twitch.tv/kraken/channels/lirik/follows","commercial":"https://api.twitch.tv/kraken/channels/lirik/commercial","stream_key":"https://api.twitch.tv/kraken/channels/lirik/stream_key","chat":"https://api.twitch.tv/kraken/chat/lirik","features":"https://api.twitch.tv/kraken/channels/lirik/features","subscriptions":"https://api.twitch.tv/kraken/channels/lirik/subscriptions","editors":"https://api.twitch.tv/kraken/channels/lirik/editors","teams":"https://api.twitch.tv/kraken/channels/lirik/teams","videos":"https://api.twitch.tv/kraken/channels/lirik/videos"},"delay":null,"banner":null,"background":null}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 20:51:26 GMT
+recorded_with: VCR 3.0.3

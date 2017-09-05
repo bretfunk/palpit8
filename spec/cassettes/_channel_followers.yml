@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitch.tv/kraken/channels/lirik/follows
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Client-Id:
+      - 7ys61xpn2rnyzibtuuf05le3utxgts
+      Authorization:
+      - OAuth vmgryl3yotuzd472lqye7m96nwhtyn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, private
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Twitch-Trace-Id:
+      - 19f9fe33a4ccc24a54b323a508550a4e
+      X-Ctxlog-Logid:
+      - 1-59af10c5-2f0474ee44a8352176cb0cda
+      Front-End-Https:
+      - 'on'
+      Timing-Allow-Origin:
+      - https://www.twitch.tv
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 05 Sep 2017 21:01:58 GMT
+      Content-Length:
+      - '11433'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_total":1800230,"_links":{"self":"https://api.twitch.tv/kraken/channels/lirik/follows?channel=lirik\u0026direction=desc\u0026limit=25","next":"https://api.twitch.tv/kraken/channels/lirik/follows?channel=lirik\u0026cursor=1504644934910093000\u0026direction=desc\u0026limit=25"},"_cursor":"1504644934910093000","follows":[{"created_at":"2017-09-05T21:01:26Z","_links":{"self":"https://api.twitch.tv/kraken/users/hi2412/follows/channels/lirik"},"notifications":false,"user":{"display_name":"hi2412","_id":135426696,"name":"hi2412","type":"user","bio":null,"created_at":"2016-09-26T02:09:41Z","updated_at":"2017-09-05T01:56:23Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/hi2412"}}},{"created_at":"2017-09-05T21:00:57Z","_links":{"self":"https://api.twitch.tv/kraken/users/na4rssie/follows/channels/lirik"},"notifications":true,"user":{"display_name":"na4rssie","_id":135900459,"name":"na4rssie","type":"user","bio":null,"created_at":"2016-10-01T18:08:34Z","updated_at":"2017-08-06T22:55:20Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/na4rssie-profile_image-e98f8dfc57797799-300x300.png","_links":{"self":"https://api.twitch.tv/kraken/users/na4rssie"}}},{"created_at":"2017-09-05T21:00:42Z","_links":{"self":"https://api.twitch.tv/kraken/users/akasandi/follows/channels/lirik"},"notifications":true,"user":{"display_name":"akaSandi","_id":100951536,"name":"akasandi","type":"user","bio":"I
+        do not stream, I just stalk people.","created_at":"2015-08-29T20:47:33Z","updated_at":"2017-09-02T23:07:23Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/akasandi-profile_image-0e5351d10b64e639-300x300.png","_links":{"self":"https://api.twitch.tv/kraken/users/akasandi"}}},{"created_at":"2017-09-05T21:00:26Z","_links":{"self":"https://api.twitch.tv/kraken/users/brunolacerda1233/follows/channels/lirik"},"notifications":false,"user":{"display_name":"BrunoLacerda1233","_id":173050654,"name":"brunolacerda1233","type":"user","bio":null,"created_at":"2017-09-05T20:42:56Z","updated_at":"2017-09-05T20:43:07Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/brunolacerda1233"}}},{"created_at":"2017-09-05T21:00:25Z","_links":{"self":"https://api.twitch.tv/kraken/users/imtrashboi/follows/channels/lirik"},"notifications":true,"user":{"display_name":"imtrashboi","_id":121981217,"name":"imtrashboi","type":"user","bio":"Just
+        your typical streamer playing games and being a dork B]","created_at":"2016-04-16T23:15:28Z","updated_at":"2017-08-25T18:36:29Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/imtrashboi-profile_image-06a7b1e138536ca2-300x300.jpeg","_links":{"self":"https://api.twitch.tv/kraken/users/imtrashboi"}}},{"created_at":"2017-09-05T21:00:03Z","_links":{"self":"https://api.twitch.tv/kraken/users/chaogardian/follows/channels/lirik"},"notifications":false,"user":{"display_name":"ChaoGardian","_id":162274524,"name":"chaogardian","type":"user","bio":"Well
+        nothing special to say i''m more than certain you know how to properly conduct
+        yourself in chat and should you miss behave don''t be surprised as to what
+        happens next i''d much prefer a follow sense its something everyone can do","created_at":"2017-07-01T02:22:16Z","updated_at":"2017-08-26T07:04:28Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/faad6cfbe26b6afa-profile_image-300x300.jpeg","_links":{"self":"https://api.twitch.tv/kraken/users/chaogardian"}}},{"created_at":"2017-09-05T20:59:59Z","_links":{"self":"https://api.twitch.tv/kraken/users/solnceef/follows/channels/lirik"},"notifications":true,"user":{"display_name":"solnceef","_id":131365890,"name":"solnceef","type":"user","bio":null,"created_at":"2016-08-05T00:15:20Z","updated_at":"2017-08-21T11:53:55Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/solnceef"}}},{"created_at":"2017-09-05T20:59:41Z","_links":{"self":"https://api.twitch.tv/kraken/users/aiminginstyle/follows/channels/lirik"},"notifications":false,"user":{"display_name":"AimingInStyle","_id":172711348,"name":"aiminginstyle","type":"user","bio":null,"created_at":"2017-09-03T11:28:00Z","updated_at":"2017-09-03T11:28:00Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/aiminginstyle"}}},{"created_at":"2017-09-05T20:59:19Z","_links":{"self":"https://api.twitch.tv/kraken/users/monsterfrik/follows/channels/lirik"},"notifications":false,"user":{"display_name":"monsterfrik","_id":150168768,"name":"monsterfrik","type":"user","bio":null,"created_at":"2017-03-12T00:43:18Z","updated_at":"2017-09-02T23:49:15Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/9b02dfa997b3d462-profile_image-300x300.png","_links":{"self":"https://api.twitch.tv/kraken/users/monsterfrik"}}},{"created_at":"2017-09-05T20:58:53Z","_links":{"self":"https://api.twitch.tv/kraken/users/xtn12/follows/channels/lirik"},"notifications":true,"user":{"display_name":"Xtn12","_id":87449278,"name":"xtn12","type":"user","bio":"I
+        am here for the emblem :)","created_at":"2015-04-04T06:04:20Z","updated_at":"2017-08-26T23:40:46Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/xtn12-profile_image-49a694d2baa9fb9c-300x300.jpeg","_links":{"self":"https://api.twitch.tv/kraken/users/xtn12"}}},{"created_at":"2017-09-05T20:58:37Z","_links":{"self":"https://api.twitch.tv/kraken/users/struka32/follows/channels/lirik"},"notifications":true,"user":{"display_name":"Struka32","_id":28253609,"name":"struka32","type":"user","bio":null,"created_at":"2012-02-16T12:16:00Z","updated_at":"2017-08-22T01:59:30Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/struka32"}}},{"created_at":"2017-09-05T20:58:20Z","_links":{"self":"https://api.twitch.tv/kraken/users/c4stlebravo/follows/channels/lirik"},"notifications":true,"user":{"display_name":"C4stleBravo","_id":171120966,"name":"c4stlebravo","type":"user","bio":null,"created_at":"2017-08-23T19:26:13Z","updated_at":"2017-08-26T20:44:05Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/c4stlebravo"}}},{"created_at":"2017-09-05T20:57:52Z","_links":{"self":"https://api.twitch.tv/kraken/users/suzababk/follows/channels/lirik"},"notifications":true,"user":{"display_name":"suzababk","_id":118714685,"name":"suzababk","type":"user","bio":null,"created_at":"2016-03-14T10:36:59Z","updated_at":"2017-08-20T12:58:51Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/suzababk"}}},{"created_at":"2017-09-05T20:57:09Z","_links":{"self":"https://api.twitch.tv/kraken/users/dohregard/follows/channels/lirik"},"notifications":true,"user":{"display_name":"Dohregard","_id":39854272,"name":"dohregard","type":"user","bio":null,"created_at":"2013-01-31T00:52:42Z","updated_at":"2017-07-26T22:30:14Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/905e426e67bf3474-profile_image-300x300.png","_links":{"self":"https://api.twitch.tv/kraken/users/dohregard"}}},{"created_at":"2017-09-05T20:57:06Z","_links":{"self":"https://api.twitch.tv/kraken/users/snowydub/follows/channels/lirik"},"notifications":false,"user":{"display_name":"SnowyDUB","_id":97878792,"name":"snowydub","type":"user","bio":"BeerPizzaTunesHippyMagic","created_at":"2015-08-01T01:04:25Z","updated_at":"2017-07-31T14:54:34Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/snowydub-profile_image-8f1033d807d1202a-300x300.png","_links":{"self":"https://api.twitch.tv/kraken/users/snowydub"}}},{"created_at":"2017-09-05T20:56:51Z","_links":{"self":"https://api.twitch.tv/kraken/users/npfree/follows/channels/lirik"},"notifications":false,"user":{"display_name":"NpFree","_id":142283853,"name":"npfree","type":"user","bio":null,"created_at":"2016-12-18T19:34:19Z","updated_at":"2017-08-24T18:28:10Z","logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/9b06f89a687c1905-profile_image-300x300.jpeg","_links":{"self":"https://api.twitch.tv/kraken/users/npfree"}}},{"created_at":"2017-09-05T20:56:44Z","_links":{"self":"https://api.twitch.tv/kraken/users/nextlevelbe/follows/channels/lirik"},"notifications":true,"user":{"display_name":"nextlevelbe","_id":146757898,"name":"nextlevelbe","type":"user","bio":null,"created_at":"2017-02-02T23:10:33Z","updated_at":"2017-02-02T23:10:34Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/nextlevelbe"}}},{"created_at":"2017-09-05T20:56:38Z","_links":{"self":"https://api.twitch.tv/kraken/users/blademaster607/follows/channels/lirik"},"notifications":true,"user":{"display_name":"BladeMaster607","_id":47509857,"name":"blademaster607","type":"user","bio":"A
+        guy that sucks at video games and decides to stream them LOL","created_at":"2013-08-12T19:40:13Z","updated_at":"2017-08-19T19:53:23Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/blademaster607"}}},{"created_at":"2017-09-05T20:56:37Z","_links":{"self":"https://api.twitch.tv/kraken/users/the_dachi/follows/channels/lirik"},"notifications":true,"user":{"display_name":"The_Dachi","_id":156327571,"name":"the_dachi","type":"user","bio":null,"created_at":"2017-05-09T14:34:08Z","updated_at":"2017-05-09T14:34:12Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/the_dachi"}}},{"created_at":"2017-09-05T20:56:25Z","_links":{"self":"https://api.twitch.tv/kraken/users/stoakvilla/follows/channels/lirik"},"notifications":true,"user":{"display_name":"stoakvilla","_id":149752794,"name":"stoakvilla","type":"user","bio":null,"created_at":"2017-03-08T00:21:30Z","updated_at":"2017-07-08T20:48:26Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/stoakvilla"}}},{"created_at":"2017-09-05T20:56:05Z","_links":{"self":"https://api.twitch.tv/kraken/users/motherflunker/follows/channels/lirik"},"notifications":false,"user":{"display_name":"motherflunker","_id":58607677,"name":"motherflunker","type":"user","bio":null,"created_at":"2014-03-11T06:08:46Z","updated_at":"2017-08-05T19:19:02Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/motherflunker"}}},{"created_at":"2017-09-05T20:55:52Z","_links":{"self":"https://api.twitch.tv/kraken/users/jolyhuesos/follows/channels/lirik"},"notifications":false,"user":{"display_name":"jolyhuesos","_id":172634864,"name":"jolyhuesos","type":"user","bio":null,"created_at":"2017-09-02T22:10:06Z","updated_at":"2017-09-04T12:26:48Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/jolyhuesos"}}},{"created_at":"2017-09-05T20:55:49Z","_links":{"self":"https://api.twitch.tv/kraken/users/theboymann/follows/channels/lirik"},"notifications":true,"user":{"display_name":"Theboymann","_id":89074578,"name":"theboymann","type":"user","bio":null,"created_at":"2015-04-20T17:58:37Z","updated_at":"2017-06-25T17:01:22Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/theboymann"}}},{"created_at":"2017-09-05T20:55:46Z","_links":{"self":"https://api.twitch.tv/kraken/users/molla82/follows/channels/lirik"},"notifications":true,"user":{"display_name":"molla82","_id":158305749,"name":"molla82","type":"user","bio":null,"created_at":"2017-05-29T18:33:25Z","updated_at":"2017-08-18T12:07:47Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/molla82"}}},{"created_at":"2017-09-05T20:55:34Z","_links":{"self":"https://api.twitch.tv/kraken/users/luffsrt/follows/channels/lirik"},"notifications":false,"user":{"display_name":"Luffsrt","_id":162910218,"name":"luffsrt","type":"user","bio":null,"created_at":"2017-07-05T18:02:38Z","updated_at":"2017-07-20T18:50:31Z","logo":null,"_links":{"self":"https://api.twitch.tv/kraken/users/luffsrt"}}}]}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 21:01:58 GMT
+recorded_with: VCR 3.0.3

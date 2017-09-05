@@ -77,4 +77,16 @@ describe TwitchService do
       end
     end
   end
+
+  context "#channel_followers" do
+    it "retrieves channel followers" do
+      VCR.use_cassette("#channel_followers") do
+        
+        channel_followers = TwitchService.new.channel_followers(ENV['TOKEN'], 'lirik')
+
+        expect(channel_followers.class).to eq(Hash)
+        expect(channel_followers).to have_key(:_total)
+      end
+    end
+  end
 end

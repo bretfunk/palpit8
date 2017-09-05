@@ -89,4 +89,15 @@ describe TwitchService do
       end
     end
   end
+
+  #context "#channel_subscribers" do
+    #it "retrieves a channels subscribers" do
+      #VCR.use_cassette("#channel_subscribers") do
+        
+        #c_subscribers = TwitchService.new.channel_subscribers(ENV['TOKEN'], 'lirik')
+
+        #expect(c_subscribers.class).to eq(Hash)
+      #end
+    #end
+  #end
 end

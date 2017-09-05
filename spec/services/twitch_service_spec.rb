@@ -100,4 +100,17 @@ describe TwitchService do
       #end
     #end
   #end
+
+  context "#search_channels" do
+    it "retrieves a search for channel" do
+      VCR.use_cassette("#search_channels") do
+        
+        search = TwitchService.new.search_channels(ENV['TOKEN'], "lirik")
+
+        expect(search.class).to eq(Hash)
+        expect(search).to have_key(:_total)
+        expect(search[:channels][0]).to have_key(:display_name)
+      end
+    end
+  end
 end

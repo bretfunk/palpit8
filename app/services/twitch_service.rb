@@ -157,7 +157,7 @@ class TwitchService
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
-    search_results = JSON.parse(repsonse.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   def search_streams(user_token, query)

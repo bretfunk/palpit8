@@ -1,3 +1,8 @@
-<h1><%= @game.name %></h1>
-
+<h2><%= @game_streams.game_name %></h2>
+<% @game_streams.streams.each do |stream| %>
+  <%= stream.stream_name %>
+  <%= stream.streamer_name %>
+  <%= stream.viewers %>
+  <%= stream.preview %>
+<% end %>
 <%= render partial: 'chatrooms/show' %>

@@ -6,13 +6,13 @@ class GameStream
     @user_token = user_token
     @game_name = game_name
     @twitch_service = TwitchService.new
-    @game_streams = []
+    @streams = []
     compile_streams
   end
 
   def compile_streams
-    streams = @twitch_service.streams_for_game(user_token, game_name)[:streams]
-    @game_streams = streams.map do |stream|
+    game_streams = @twitch_service.streams_for_game(user_token, game_name)[:streams]
+    @streams = game_streams.map do |stream|
       create_stream(stream)
     end
   end

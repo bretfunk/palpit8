@@ -16,7 +16,6 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'awesome_print'
 gem 'twitch-chat'
@@ -28,6 +27,8 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
+gem 'materialize-sass'
+gem 'turbolinks', '~> 5.0'
 
 
 group :test do

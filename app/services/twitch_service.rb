@@ -121,7 +121,7 @@ class TwitchService
 
   #channel requests
 
-  def channel_info(user_token, channel_name)
+  def stream_for_channel(user_token, channel_name)
     response = @conn.get do |req|
       req.url                      "/kraken/channels/#{channel_name}"
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
@@ -175,7 +175,6 @@ class TwitchService
       req.headers['Authorization'] = "OAuth #{user_token}"
     end
     search_results = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
   end
 
   #stream requests
@@ -189,9 +188,9 @@ class TwitchService
     stream = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def streams_for_game(user_token, game_name)
+  def streams_for_game(user_token, game_name, quantity = 8)
     response = @conn.get do |req|
-      req.url                      "/kraken/streams/?game=#{game_name}"
+      req.url                      "/kraken/streams/?game=#{game_name}&limit=#{quantity}&language=en"
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end

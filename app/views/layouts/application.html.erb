@@ -5,9 +5,38 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col s1">
+            <a href="#" class="brand-logo">Palpit8</a>
+          </div>
+          <div class="container">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="<%= games_path %>">Browse</a></li>
+                <% if current_user %>
+                  <li><a href="<%= follows_path(current_user) %>">Following</a></li>
+                <% end %>
+                <li><a href="">Search</a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+              <% if current_user %>
+                <li><a href=""></a><%= current_users_profile.profile_pic %></li>
+                <li><a href=""></a><%= current_users_profile.username %></li>
+                <li><a href=""></a>Logout</li>
+              <% else %>
+                <li><a href=""></a>Login</li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 

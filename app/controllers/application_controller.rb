@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def current_users_profile
+    @current_user_profile ||= current_user.twitch_profile(current_user.token)
   end
 
   #def current_permission

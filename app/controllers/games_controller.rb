@@ -6,8 +6,8 @@ class GamesController < ApplicationController
   end
 
   def show
-    #@game = Game.find_by(slug: params[:slug])
-    @chatroom = Chatroom.find_by(slug: params[:slug])
+    @game_streams = GameStream.new("vmgryl3yotuzd472lqye7m96nwhtyn", params[:id])
+    @chatroom = Chatroom.find_by(topic: params[:id].parameterize)
     @message = Message.new
   end
 end

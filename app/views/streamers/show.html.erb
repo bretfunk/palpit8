@@ -1,0 +1,80 @@
+<div class="cover_photo">
+  <img src="<%= @streamer.banner_picture %>" alt="Profile Cover Picture" height="5%" width="100%">
+</div>
+
+<div class="streamers_tb toolbar">
+  <div class="navbar">
+     <nav>
+       <div class="nav-wrapper">
+        <div class="row">
+          <ul class="left hide-on-med-and-down">
+            <li class="col s2 push-s1">
+              <img src="<%= @streamer.profile_pic %>" alt="Profile Picture" height="47px" width="47px">
+            </li>
+            <li class="col s4 push-s4">
+              <strong><%= @streamer.name %></strong>
+            </li>
+            <li class="col s1 push-s6">
+              <i class="material-icons right">verified_user</i>
+            </li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <i class="material-icons left">favorite</i>
+              Followers: <strong><%= @streamer.followers %></strong>
+            </li>
+            <li>
+              <a class="waves-effect waves-light btn" id="follow-button"><i class="material-icons left" id="follow-icon">favorite_border</i>Follow</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="row" id="stream">
+  <div class="col s9">
+    <iframe
+      src="http://player.twitch.tv/?channel=<%= @streamer.channel_name %>"
+      height="720"
+      width="1080"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+  <div class="col s2">
+    <iframe
+      frameborder="0"
+      scrolling="no"
+      id="chat_embed"
+      src="http://www.twitch.tv/<%= @streamer.channel_name %>/chat"
+      height="720"
+      width="350">
+    </iframe>
+  </div>
+</div>
+
+
+<div class="row stream_info">
+  <div class="col s1">
+    <img class="game-thumbnail" src="https://static-cdn.jtvnw.net/ttv-boxart/<%= @streamer.game_name %>-138x190.jpg" alt="Game Thumbnail" height="95" width="69">
+  </div>
+  <div class="col s4">
+    <%= @streamer.stream_name %><br>
+    <i class="material-icons left">games</i>
+    <p class="game_name">
+      <%= link_to @streamer.game_name, game_path(@streamer.game_name) %>
+    </p>
+  </div>
+  <div class="col s2">
+    <i class="material-icons left">remove_red_eye</i>
+    Watching Now: <%= @streamer.watching_now %>
+  </div>
+  <div class="col s2">
+    <i class="material-icons left">person</i>
+    Total Views: <%= @streamer.total_views %>
+  </div>
+</div>
+<div class="divider"></div>

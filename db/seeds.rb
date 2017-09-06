@@ -1,14 +1,12 @@
  GAMES = [
-          "Destiny 2"
+          "Destiny 2",
           "Dota 2",
-          "Hearthstone",
           "League of Legends",
           "Overwatch",
           "Path of Exile",
           "PLAYERUNKNOWN'S BATTLEGROUNDS",
-          "Smite",
           "Starcraft 2",
-          "World of Warcraft",
+          "World of Warcraft"
           ]
 
  GAMES.each do |game|

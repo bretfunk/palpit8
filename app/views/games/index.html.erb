@@ -1,16 +1,14 @@
-<h1>Games Index</h1>
-
 <div class="container">
   <div class="row">
-    <!-- <div class="col s1"></div> -->
     <% @games.each do |game| %>
       <div class="col s3">
         <hr>
-        <img src="https://static-cdn.jtvnw.net/ttv-boxart/<%= game.name %>-200x250.jpg" alt="Game Thumbnail">
+        <a href="https://palpit8.herokuapp.com/games/<%= game.name %>">
+         <img src="https://static-cdn.jtvnw.net/ttv-boxart/<%= game.name %>-200x250.jpg" alt="Game Thumbnail">
         <%= game.name %>
+        </a>
       </div>
     <% end %>
-    <!-- <div class="col s1"></div> -->
   </div>
   <div class="divider"></div>
 </div>

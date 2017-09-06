@@ -1,0 +1,4 @@
+<h1><%= @chatroom.topic %></h1>
+  <p><%= link_to "Edit", edit_admin_chatroom_path(@chatroom) %></p>
+  <p><%= link_to "Delete", admin_chatroom_path(@chatroom), method: :delete %></p>
+  <p><%= link_to "Return to Chatrooms", admin_chatrooms_path %></p>

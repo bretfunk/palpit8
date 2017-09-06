@@ -1,8 +1,13 @@
  GAMES = ["PUBG", "League of Legends", "Starcraft 2", "Destiny 2", "Overwatch"]
+ ROLES = ["admin", "registered_user"]
 
  GAMES.each do |game|
    Chatroom.create(topic: game)
    Game.create(name: game)
+ end
+
+ ROLES.each do |role|
+   Role.create(name: role)
  end
 
 1000.times do

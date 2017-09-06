@@ -11,5 +11,14 @@ App.tones = App.cable.subscriptions.create('ToneChannel', {
     } else if (data.tone_data == 'Fear') {
       $(".nextButton").css('border','10px solid #712619');
     }
+    return $("#tones").text(this.renderTone(data));
+  },
+
+  renderTone: function(data) {
+    return "<p>" + data.tone_data + "</p>";
   }
 });
+
+window.setInterval(function(){
+  App.tones.send({message: 'dummy'})
+}, 5000);

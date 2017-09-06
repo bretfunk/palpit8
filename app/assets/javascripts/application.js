@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require_tree ./channels
 //= require materialize-sprockets
+//= require_tree .

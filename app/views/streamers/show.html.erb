@@ -24,7 +24,7 @@
               Followers: <strong><%= @streamer.followers %></strong>
             </li>
             <li>
-              <a class="waves-effect waves-light btn" href="<%= new_follow_path(@streamer.name) %>"><i class="material-icons left">favorite_border</i>Follow</a>
+              <a class="waves-effect waves-light btn" id="follow-button"><i class="material-icons left" id="follow-icon">favorite_border</i>Follow</a>
             </li>
           </ul>
         </div>
@@ -58,10 +58,10 @@
 
 
 <div class="row stream_info">
-  <div class="col s1 push-s1">
-    <img src="https://static-cdn.jtvnw.net/ttv-boxart/<%= @streamer.game_name %>-138x190.jpg" alt="Game Thumbnail" height="95" width="69">
+  <div class="col s1">
+    <img class="game-thumbnail" src="https://static-cdn.jtvnw.net/ttv-boxart/<%= @streamer.game_name %>-138x190.jpg" alt="Game Thumbnail" height="95" width="69">
   </div>
-  <div class="col s5 push-s1">
+  <div class="col s4">
     <%= @streamer.stream_name %><br>
     <i class="material-icons left">games</i>
     <p class="game_name">

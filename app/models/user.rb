@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def registered_user?
     roles.exists?(name: "registered_user")
   end
+
+  def twitch_profile(user_token)
+    TwitchService.current_users_profile_info(user_token)
+  end
 end

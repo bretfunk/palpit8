@@ -2,10 +2,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col s6">
+    <div class="col s1">
+      <img id="game_thumbnail" src="https://static-cdn.jtvnw.net/ttv-boxart/<%= @game_streams.game_name %>-138x190.jpg" alt="Game Thumbnail" height="95" width="69">
+    </div>
+    <div class="col s4 push-s1">
       <h4><%= @game_streams.game_name %></h4>
     </div>
-    <div class="col s3 pull-s1">
+    <div class="col s3 push-s5">
       <a class="waves-effect waves-light btn" id="follow_button" href="<%= new_follow_path(@game_streams.game_name) %>"><i class="material-icons left">favorite_border</i>Follow</a>
     </div>
   </div>

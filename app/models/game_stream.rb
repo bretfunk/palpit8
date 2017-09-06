@@ -24,8 +24,7 @@ class GameStream
       stream[:channel][:name],
       stream[:channel][:display_name],
       stream[:viewers],
-      stream[:preview][:medium],
-      stream[:preview][:large]
+      stream[:preview][:medium]
     )
   end
 

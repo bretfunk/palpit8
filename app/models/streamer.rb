@@ -6,7 +6,6 @@ class Streamer
               :banner_picture,
               :banner_color,
               :followers,
-              :game_image,
               :game_name,
               :watching_now,
               :total_views
@@ -21,7 +20,6 @@ class Streamer
     @banner_picture = ""
     @banner_color   = ""
     @followers      = ""
-    @game_image     = ""
     @game_name      = ""
     @watching_now   = ""
     @total_views    = ""
@@ -40,7 +38,6 @@ class Streamer
     @banner_picture = response[:stream][:channel][:profile_banner]
     @banner_color   = response[:stream][:channel][:profile_banner_background_color]
     @followers      = response[:stream][:channel][:followers]
-    # @game_image     = response[:stream][:channel][:]
     @game_name      = response[:stream][:game]
     @watching_now   = response[:stream][:viewers]
     @total_views    = response[:stream][:channel][:views]

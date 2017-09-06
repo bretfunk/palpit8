@@ -9,7 +9,7 @@
         <div class="row">
           <ul class="left hide-on-med-and-down">
             <li class="col s2 push-s1">
-              <img src="<%= @streamer.profile_pic %>" alt="Profile Picture" height="45px" width="45px">
+              <img src="<%= @streamer.profile_pic %>" alt="Profile Picture" height="47px" width="47px">
             </li>
             <li class="col s4 push-s4">
               <strong><%= @streamer.name %></strong>
@@ -33,27 +33,40 @@
   </div>
 </div>
 
-<div class="center-align">
-  <iframe
-    src="http://player.twitch.tv/?channel=<%= @streamer.channel_name %>"
-    height="720"
-    width="1280"
-    frameborder="0"
-    scrolling="no"
-    allowfullscreen="true">
-  </iframe>
+<div class="row" id="stream">
+  <div class="col s9">
+    <iframe
+      src="http://player.twitch.tv/?channel=<%= @streamer.channel_name %>"
+      height="720"
+      width="1080"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+  <div class="col s2">
+    <iframe
+      frameborder="0"
+      scrolling="no"
+      id="chat_embed"
+      src="http://www.twitch.tv/<%= @streamer.channel_name %>/chat"
+      height="720"
+      width="350">
+    </iframe>
+  </div>
 </div>
 
-<div class="divider"></div>
 
 <div class="row stream_info">
   <div class="col s1 push-s1">
-    <img src="<%= @streamer.game_image %>" alt="Game Thumbnail" height="42" width="60">
+    <img src="https://static-cdn.jtvnw.net/ttv-boxart/<%= @streamer.game_name %>-138x190.jpg" alt="Game Thumbnail" height="80" width="69">
   </div>
   <div class="col s5 push-s1">
     <%= @streamer.stream_name %><br>
     <i class="material-icons left">games</i>
-    <%= @streamer.game_name %>
+    <p class="game_name">
+      <%= link_to @streamer.game_name, game_path(@streamer.game_name) %>
+    </p>
   </div>
   <div class="col s2">
     <i class="material-icons left">remove_red_eye</i>

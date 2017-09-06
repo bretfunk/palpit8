@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
 
   def index
-    @games = Game.all
+    #@games = Game.all
+    @chatrooms = Chatroom.all
   end
 
   def show

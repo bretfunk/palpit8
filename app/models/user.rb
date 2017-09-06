@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :uid, presence: true
   validates :provider, presence: true
   validates :token, presence: true
+  before_create :set_default_role
+  before_validation :set_default_role
 
 
   def self.find_or_create_by_auth(auth)
@@ -32,5 +34,9 @@ class User < ApplicationRecord
 
   def twitch_profile(user_token)
     TwitchService.current_users_profile_info(user_token)
+  private
+
+  def set_default_role
+    self.roles << Role.find_by_name('registered_user')
   end
 end

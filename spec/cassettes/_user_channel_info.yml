@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitch.tv/kraken/channel
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Client-Id:
+      - 7ys61xpn2rnyzibtuuf05le3utxgts
+      Authorization:
+      - OAuth vmgryl3yotuzd472lqye7m96nwhtyn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '103'
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, private
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Twitch-Trace-Id:
+      - a502c1110ae53ff6620a3f3bc47d5c28
+      X-Ctxlog-Logid:
+      - 1-59af00d9-11045d5e5971176342d697e5
+      Timing-Allow-Origin:
+      - https://www.twitch.tv
+      Date:
+      - Tue, 05 Sep 2017 19:54:01 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"Unauthorized","status":401,"message":"{\"code\":401,\"status\":\"authentication
+        failed\"}\n"}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 19:54:01 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,4 @@
+<h1><%= @game.name %></h1>
+  <p><%= link_to "Edit", edit_admin_game_path(@game) %></p>
+  <p><%= link_to "Delete", admin_game_path(@game), method: :delete %></p>
+  <p><%= link_to "Return to Index", admin_games_path %></p>

@@ -78,7 +78,7 @@ class TwitchService
     response = @conn.get do |req|
       req.url                      "/kraken/channel"
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
+     req.headers['Authorization'] = "OAuth #{user_token}"
     end
     channel_info = JSON.parse(response.body, symbolize_names: true)
   end

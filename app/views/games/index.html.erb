@@ -12,3 +12,7 @@
   </div>
   <div class="divider"></div>
 </div>
+
+<% @chatrooms.each do |chatroom| %>
+  <p><%= chatroom.topic %></p>
+<% end %>

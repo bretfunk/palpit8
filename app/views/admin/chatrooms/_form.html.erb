@@ -1,0 +1,7 @@
+<%= form_for [:admin, @chatroom ] do |f| %>
+  <p>
+  <%= f.label :topic %><br>
+  <%= f.text_field :topic %>
+  <%= f.submit %>
+  </p>
+<% end %>

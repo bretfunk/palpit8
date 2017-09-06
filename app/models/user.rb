@@ -34,6 +34,8 @@ class User < ApplicationRecord
 
   def twitch_profile(user_token)
     TwitchService.current_users_profile_info(user_token)
+  end
+
   private
 
   def set_default_role

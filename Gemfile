@@ -28,6 +28,7 @@ gem 'redis', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'materialize-sass'
+gem 'turbolinks', '~> 5.0'
 
 
 group :test do

@@ -13,7 +13,6 @@ class GameStream
   def compile_streams
     streams = @twitch_service.streams_for_game(user_token, game_name)[:streams]
     @game_streams = streams.map do |stream|
-      binding.pry
       create_stream(stream)
     end
   end

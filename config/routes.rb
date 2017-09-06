@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   get "/dashboard", to: "dashboard#show"
 
-  resources :home
-  get "/refresh_part", to: "home#refresh_part"
-
+  namespace :admin do
+    resources :games
+    resources :chatrooms
+  end
 
   resources :messages
   resources :chatrooms, param: :slug

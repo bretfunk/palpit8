@@ -121,7 +121,7 @@ class TwitchService
 
   #channel requests
 
-  def channel_info(user_token, channel_name)
+  def stream_for_channel(user_token, channel_name)
     response = @conn.get do |req|
       req.url                      "/kraken/channels/#{channel_name}"
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']

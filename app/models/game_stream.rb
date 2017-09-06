@@ -1,6 +1,6 @@
 class GameStream
   attr_reader :game_name,
-              :game_streams
+              :streams
 
   def initialize(user_token, game_name)
     @user_token = user_token

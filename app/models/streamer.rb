@@ -26,10 +26,6 @@ class Streamer
     compile_stream_page
   end
 
-  def self.compile(user)
-    new(user).compile
-  end
-
   def compile_stream_page
     response = @twitch_service.stream_for_channel(user_token, channel_name)
     @stream_name    = response[:stream][:channel][:status]

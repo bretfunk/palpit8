@@ -188,9 +188,9 @@ class TwitchService
     stream = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def streams_for_game(user_token, game_name)
+  def streams_for_game(user_token, game_name, quantity = 10)
     response = @conn.get do |req|
-      req.url                      "/kraken/streams/?game=#{game_name}"
+      req.url                      "/kraken/streams/?game=#{game_name}&limit=#{quantity}"
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
       req.headers['Authorization'] = "OAuth #{user_token}"
     end

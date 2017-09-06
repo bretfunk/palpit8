@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :games, param: :slug,  only: [:index, :show]
 
   mount ActionCable.server => '/cable'
+
 end

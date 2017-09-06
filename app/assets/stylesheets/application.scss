@@ -1,2 +1,42 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@keyframes pulse {
+  0%{opacity: 1;}
+  50%{ opacity: .4;}
+  100%{transform: scale(2); opacity: 0;}
+}
+.container {
+  float: right;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+  height: 400px;
+  width: 100%;
+}
+.nextButton {
+  border: 10px solid #46BDF0;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.pulse1{
+  animation: pulse 2s infinite .4s;
+}
+.pulse2{
+  animation: pulse 2s infinite .8s;
+}
+.pulse3{
+  text-align: center;
+  line-height: 150px;
+  width: 150px;
+  height: 150px;
+}
+

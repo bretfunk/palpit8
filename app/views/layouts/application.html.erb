@@ -18,16 +18,16 @@
           </div>
           <div class="container">
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="<%= games_path %>">Browse</a></li>
+                <li><a href="<%#= games_path %>">Browse</a></li>
                 <% if current_user %>
-                  <li><a href="<%= follows_path(current_user) %>">Following</a></li>
+                  <li><a href="<%#= follows_path(current_user) %>">Following</a></li>
                 <% end %>
                 <li><a href="">Search</a></li>
             </ul>
             <ul class="right hide-on-med-and-down">
               <% if current_user %>
-                <li><a href=""></a><%= current_users_profile.profile_pic %></li>
-                <li><a href=""></a><%= current_users_profile.username %></li>
+                <li><a href=""></a><%#= current_users_profile.profile_pic %></li>
+                <li><a href=""></a><%#= current_users_profile.username %></li>
                 <li><a href=""></a>Logout</li>
               <% else %>
                 <li><a href=""></a>Login</li>

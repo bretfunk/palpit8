@@ -8,14 +8,14 @@ class ApplicationController < ActionController::Base
                   #:warning,
                   #:danger
 
-  helper_method :current_user
+  helper_method :current_user, :current_users_profile
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def current_users_profile
-    @current_user_profile ||= current_user.twitch_profile(current_user.token)
+  def current_users_profile(user_token)
+    @current_user_profile ||= current_user.twitch_profile(user_token)
   end
 
   #def current_permission

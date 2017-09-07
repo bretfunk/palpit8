@@ -1,4 +1,6 @@
 class Streamer
+  include ActionView::Helpers::NumberHelper
+
   attr_reader :stream_name,
               :channel_name,
               :name,
@@ -32,12 +34,16 @@ class Streamer
     @profile_pic    = response[:stream][:channel][:logo]
     @banner_picture = response[:stream][:channel][:profile_banner]
     @banner_color   = response[:stream][:channel][:profile_banner_background_color]
-    @followers      = response[:stream][:channel][:followers]
+    @followers      = num_cleaner(response[:stream][:channel][:followers])
     @game_name      = response[:stream][:game]
-    @watching_now   = response[:stream][:viewers]
-    @total_views    = response[:stream][:channel][:views]
+    @watching_now   = num_cleaner(response[:stream][:viewers])
+    @total_views    = num_cleaner(response[:stream][:channel][:views])
   end
 
   private
     attr_reader :user_token
+
+    def num_cleaner(number)
+      number_with_delimiter(number, :delimiter => ',')
+    end
 end

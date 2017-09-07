@@ -25,10 +25,10 @@
           </ul>
           <ul class="right hide-on-med-and-down">
             <% if current_user %>
-              <li><a href="/dashboard"><img src="<%= current_users_profile(current_user.token).profile_pic %>" alt="users_profile_pic"><%= current_users_profile(current_user.token).username %></a></li>
-              <li><a href="/logout"></a>Logout</li>
+              <li><a href="/dashboard"><%= current_users_profile(current_user.token).display_name %></a></li>
+              <li><%= link_to "Logout", logout_path %></li>
             <% else %>
-              <li><a href="/auth/twitch"></a>Login</li>
+              <li><%= link_to "Login", login_path %></li>
             <% end %>
           </ul>
         </div>

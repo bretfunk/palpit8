@@ -1,18 +1,9 @@
 <div class="divider"></div>
 
-<div class="container">
   <div class="row">
-    <div class="col s1">
-      <img id="game_thumbnail" src="https://static-cdn.jtvnw.net/ttv-boxart/<%= @game_streams.game_name %>-138x190.jpg" alt="Game Thumbnail" height="95" width="69">
-    </div>
-    <div class="col s4 push-s1">
       <h4><%= @game_streams.game_name %></h4>
-    </div>
-    <div class="col s3 push-s5">
-      <a class="waves-effect waves-light btn follow-button" href="<%= new_follow_path(@game_streams.game_name) %>"><i class="material-icons left follow-icon">favorite_border</i>Follow</a>
-    </div>
+   
   </div>
-</div>
 
 <div class="divider"></div><br>
 
@@ -25,8 +16,5 @@
     </div>
   <% end %>
 </div>
-
-<h1><%= @chatroom.topic %></h1>
-
 
 <%= render partial: 'chatrooms/show' %>

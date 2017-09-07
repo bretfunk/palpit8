@@ -3,8 +3,8 @@
     <% @chatrooms.each do |chatroom| %>
       <div class="col s3">
         <hr>
-        <a href="https://palpit8.herokuapp.com/games/<%= chatroom.topic %>">
-         <img src="https://static-cdn.jtvnw.net/ttv-boxart/<%= chatroom.topic %>-200x250.jpg" alt="Game Thumbnail">
+        <a href="<%= game_path(chatroom.topic) %>">
+         <img src="https://static-cdn.jtvnw.net/ttv-boxart/<%= chatroom.topic %>-200x275.jpg" alt="Game Thumbnail">
         <%= chatroom.topic %>
         </a>
       </div>

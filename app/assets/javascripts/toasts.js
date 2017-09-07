@@ -1,7 +1,7 @@
 (function($, Vel) {
   'use strict';
 
-  let _defaults = {
+  var _defaults = {
     displayLength: Infinity,
     inDuration: 300,
     outDuration: 375,
@@ -47,7 +47,7 @@
 
       // Create new toast
       Toast._toasts.push(this);
-      let toastElement = this.createToast();
+      var toastElement = this.createToast();
       toastElement.M_Toast = this;
       this.el = toastElement;
       this._animateIn();
@@ -62,7 +62,7 @@
      * Append toast container and add event handlers
      */
     static _createContainer() {
-      let container = document.createElement('div');
+      var container = document.createElement('div');
       container.setAttribute('id', 'toast-container');
 
       // Add event handler
@@ -96,8 +96,8 @@
      */
     static _onDragStart(e) {
       if (e.target && $(e.target).closest('.toast').length) {
-        let $toast = $(e.target).closest('.toast');
-        let toast = $toast[0].M_Toast;
+        var $toast = $(e.target).closest('.toast');
+        var toast = $toast[0].M_Toast;
         toast.panning = true;
         Toast._draggedToast = toast;
         toast.el.classList.add('panning');
@@ -115,14 +115,14 @@
     static _onDragMove(e) {
       if (!!Toast._draggedToast) {
         e.preventDefault();
-        let toast = Toast._draggedToast;
+        var toast = Toast._draggedToast;
         toast.deltaX = Math.abs(toast.xPos - Toast._xPos(e));
         toast.xPos = Toast._xPos(e);
         toast.velocityX = toast.deltaX / (Date.now() - toast.time);
         toast.time = Date.now();
 
-        let totalDeltaX = toast.xPos - toast.startingXPos;
-        let activationDistance =
+        var totalDeltaX = toast.xPos - toast.startingXPos;
+        var activationDistance =
             toast.el.offsetWidth * toast.options.activationPercent;
         toast.el.style.transform = `translateX(${totalDeltaX}px)`;
         toast.el.style.opacity = 1-Math.abs(totalDeltaX / activationDistance);
@@ -135,14 +135,14 @@
      */
     static _onDragEnd(e) {
       if (!!Toast._draggedToast) {
-        let toast = Toast._draggedToast;
+        var toast = Toast._draggedToast;
         toast.panning = false;
         toast.el.classList.remove('panning');
 
-        let totalDeltaX = toast.xPos - toast.startingXPos;
-        let activationDistance =
+        var totalDeltaX = toast.xPos - toast.startingXPos;
+        var activationDistance =
             toast.el.offsetWidth * toast.options.activationPercent;
-        let shouldBeDismissed = Math.abs(totalDeltaX) > activationDistance ||
+        var shouldBeDismissed = Math.abs(totalDeltaX) > activationDistance ||
             toast.velocityX > 1;
 
         // Remove toast
@@ -176,7 +176,7 @@
      * Remove all toasts
      */
     static removeAll() {
-      for(let toastIndex in Toast._toasts) {
+      for(var toastIndex in Toast._toasts) {
         Toast._toasts[toastIndex].remove();
       }
     }
@@ -186,13 +186,13 @@
      * Create toast and append it to toast container
      */
     createToast() {
-      let toast = document.createElement('div');
+      var toast = document.createElement('div');
       toast.classList.add('toast');
 
       // Add custom classes onto toast
       if (this.options.className) {
-        let classes = this.options.className.split(' ');
-        let i, count;
+        var classes = this.options.className.split(' ');
+        var i, count;
         for (i = 0, count = classes.length; i < count; i++) {
           toast.classList.add(classes[i]);
         }
@@ -260,7 +260,7 @@
      */
     remove() {
       window.clearInterval(this.counterInterval);
-      let activationDistance =
+      var activationDistance =
           this.el.offsetWidth * this.options.activationPercent;
 
       if(this.wasSwiped) {

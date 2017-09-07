@@ -10,9 +10,9 @@
 <div class="row">
   <% @game_streams.streams.each do |stream| %>
     <div class="col s3">
-      <img src="<%= stream.preview %>" alt="Stream preview"><br>
-      <%= stream.stream_name %><br>
-      <%= stream.viewers %> viewers on <%= stream.streamer_name %>
+      <a href="<%= streamer_path(stream.streamer_id) %>"><img src="<%= stream.preview %>" alt="Stream preview"><br>
+        <%= stream.stream_name %><br></a>
+      <%= stream.viewers %> viewers on <a href="<%= streamer_path(stream.streamer_id) %>"><%= stream.streamer_name %></a>
     </div>
   <% end %>
 </div>

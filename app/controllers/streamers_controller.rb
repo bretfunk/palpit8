@@ -1,7 +1,7 @@
 class StreamersController < ApplicationController
 
   def show
-    @streamer = Streamer.new("vmgryl3yotuzd472lqye7m96nwhtyn", params[:id])
+    HardWorker.perform_async
+    @streamer = Streamer.new(params[:id])
   end
-
 end

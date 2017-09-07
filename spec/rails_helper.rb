@@ -14,7 +14,6 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.allow_http_connections_when_no_cassette = true
 end
-        
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -36,6 +35,34 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
+
+def stub_twitch_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:twitch] = OmniAuth::AuthHash.new( {"provider"=>"twitch",
+                                                                "uid"=>39350921,
+                                                                "info"=>
+  {"name"=>"Centronious",
+   "email"=>"acentrelli@gmail.com",
+   "nickname"=>"centronious",
+   "description"=>nil,
+   "image"=>"https://static-cdn.jtvnw.net/jtv_user_pictures/centronious-profile_image-3bfd079f54136dea-300x300.jpeg",
+   "urls"=>{"Twitch"=>"http://www.twitch.tv/centronious"}},
+  "credentials"=>{"token"=>ENV['TOKEN'], "expires"=>false},
+  "extra"=>
+  {"raw_info"=>
+   {"display_name"=>"Centronious",
+    "_id"=>39350921,
+    "name"=>"centronious",
+    "type"=>"user",
+    "bio"=>nil,
+    "created_at"=>"2013-01-15T02:42:40Z",
+    "updated_at"=>"2017-09-03T20:02:15Z",
+    "logo"=>"https://static-cdn.jtvnw.net/jtv_user_pictures/centronious-profile_image-3bfd079f54136dea-300x300.jpeg",
+    "_links"=>{"self"=>"https://api.twitch.tv/kraken/users/centronious"},
+    "email"=>"acentrelli@gmail.com",
+    "partnered"=>false,
+    "notifications"=>{"push"=>true, "email"=>true}}}})
+end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

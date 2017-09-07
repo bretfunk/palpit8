@@ -8,7 +8,7 @@
 <% end %>
 
 <% if current_user %>
-<a href="#" class="btn btn-primary" data-send="message">Send</a>
+  <a class="btn btn-primary" data-send="message">Send</a>
 <% else %>
   <% unless current_user %>
     <%= link_to "Login to Chat", "/auth/twitch"  %>

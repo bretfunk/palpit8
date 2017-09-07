@@ -1,7 +1,7 @@
 (function($, Vel) {
   'use strict';
 
-  let _defaults = {
+  var _defaults = {
     opacity: 0.5,
     inDuration: 250,
     outDuration: 250,
@@ -74,7 +74,7 @@
     }
 
     static init($els, options) {
-      let arr = [];
+      var arr = [];
       $els.each(function() {
         arr.push(new Modal($(this), options));
       });
@@ -131,15 +131,15 @@
      * @param {Event} e
      */
     handleTriggerClick(e) {
-      let $trigger =  $(e.target).closest('.modal-trigger');
+      var $trigger =  $(e.target).closest('.modal-trigger');
       if (e.target && $trigger.length) {
-        let modalId = $trigger[0].getAttribute('href');
+        var modalId = $trigger[0].getAttribute('href');
         if (modalId) {
           modalId = modalId.slice(1);
         } else {
           modalId = $trigger[0].getAttribute('data-target');
         }
-        let modalInstance = document.getElementById(modalId).M_Modal;
+        var modalInstance = document.getElementById(modalId).M_Modal;
         if (modalInstance) {
           modalInstance.open($trigger);
         }
@@ -161,7 +161,7 @@
      * @param {Event} e
      */
     handleModalCloseClick(e) {
-      let $closeTrigger =  $(e.target).closest('.modal-close');
+      var $closeTrigger =  $(e.target).closest('.modal-close');
       if (e.target && $closeTrigger.length) {
         this.close();
       }
@@ -201,7 +201,7 @@
 
 
       // Define modal animation options
-      let enterVelocityOptions = {
+      var enterVelocityOptions = {
         duration: this.options.inDuration,
         queue: false,
         ease: 'easeOutCubic',
@@ -288,7 +288,7 @@
       }
 
       this.isOpen = true;
-      let body = document.body;
+      var body = document.body;
       body.style.overflow = 'hidden';
       this.$el[0].classList.add('open');
       body.appendChild(this.$overlay[0]);

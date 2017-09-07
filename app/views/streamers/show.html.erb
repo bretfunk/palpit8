@@ -1,6 +1,4 @@
-<div class="cover_photo">
-  <img src="<%= @streamer.banner_picture %>" alt="Profile Cover Picture" height="5%" width="100%">
-</div>
+<img src="<%= @streamer.banner_picture %>" alt="Profile Cover Picture" width="100%">
 
 <div class="streamers_tb toolbar">
   <div class="navbar">
@@ -37,25 +35,25 @@
   <div class="col s9">
     <iframe
       src="http://player.twitch.tv/?channel=<%= @streamer.channel_name %>"
-      height="720"
-      width="1080"
+      width="100%"
+      height="720px"
       frameborder="0"
       scrolling="no"
       allowfullscreen="true">
     </iframe>
   </div>
-  <div class="col s2">
+  <div class="col s3">
     <iframe
       frameborder="0"
       scrolling="no"
       id="chat_embed"
       src="http://www.twitch.tv/<%= @streamer.channel_name %>/chat"
-      height="720"
-      width="350">
+      height="500px"
+      width="100%">
     </iframe>
+    <%= render "api_result" %>
   </div>
 </div>
-
 
 <div class="row stream_info">
   <div class="col s1">
@@ -68,7 +66,7 @@
       <%= link_to @streamer.game_name, game_path(@streamer.game_name) %>
     </p>
   </div>
-  <div class="col s2">
+  <div id="watching_now" class="col s2">
     <i class="material-icons left">remove_red_eye</i>
     Watching Now: <%= @streamer.watching_now %>
   </div>

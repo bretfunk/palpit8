@@ -14,7 +14,7 @@
       <div class="nav-wrapper">
         <div class="row">
           <div class="col s2">
-            <img class="palp-logo" src="https://fontmeme.com/permalink/170907/3866ede16270b89edc6ef410f8f94195.png" alt="palpit8.tv-logo" width="75%">
+            <a href="<%= games_path %>"><img class="palp-logo" src="https://fontmeme.com/permalink/170907/3866ede16270b89edc6ef410f8f94195.png" alt="palpit8.tv-logo" width="75%"></a>
           </div>
           <ul class="left hide-on-med-and-down">
               <li><%= link_to "Browse", games_path %></li>
@@ -28,7 +28,7 @@
               <li><a href="/dashboard"><%= current_users_profile(current_user.token)[:display_name] %></a></li>
               <li><%= link_to "Logout", logout_path %></li>
             <% else %>
-              <li><%= link_to "Login", login_path %></li>
+              <li><a href="/auth/twitch">Login</a></li>
             <% end %>
           </ul>
         </div>

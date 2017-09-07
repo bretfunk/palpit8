@@ -1,7 +1,3 @@
-$(document).on('turbolinks:load', function() {
-  submitNewMessage();
-});
-
 <% Chatroom.all.each do |chatroom| %>
 App['room' + <%=chatroom.id%>] = App.cable.subscriptions.create({channel: 'MessagesChannel', room: <%=chatroom.id%>}, {
   received: function(data) {
@@ -17,13 +13,11 @@ App['room' + <%=chatroom.id%>] = App.cable.subscriptions.create({channel: 'Messa
 });
 <% end %>
 
-function submitNewMessage(){
-  $('[data-send]').click(function() {
-      var msg = $('[data-textarea]').val()
-        var chatroomId = $("[data-chatroom]").data().chatroom
-        App['room' + chatroomId].setChatroomId(chatroomId)
-        App['room' + chatroomId].send({message: msg})
-        $('[data-textarea="message"]').val("")
-        return false;
-  });
-}
+$('[data-send]').click(function() {
+    var msg = $('[data-textarea]').val()
+      var chatroomId = $("[data-chatroom]").data().chatroom
+      App['room' + chatroomId].setChatroomId(chatroomId)
+      App['room' + chatroomId].send({message: msg})
+      $('[data-textarea="message"]').val("")
+      return false;
+});

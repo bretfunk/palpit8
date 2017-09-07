@@ -1,11 +1,11 @@
 <h1>Chatrooms</h1>
 <table>
 <% @chatrooms.each do |chatroom| %>
-  <tr>
-  <td><%= chatroom.topic %></td>
-  <td><%= link_to "Link", admin_chatroom_path(chatroom) %></td>
-  <td><%= link_to "Edit", edit_admin_chatroom_path(chatroom) %></td>
-  <td><%= link_to "Delete", admin_chatroom_path(chatroom), method: :delete %></td>
+  <tr class="chatroom">
+  <td class="topic"><%= chatroom.topic %></td>
+  <td class="link"><%= link_to "Link", admin_chatroom_path(chatroom) %></td>
+  <td class="edit"><%= link_to "Edit", edit_admin_chatroom_path(chatroom) %></td>
+  <td class="delete"><%= link_to "Delete", admin_chatroom_path(chatroom), method: :delete %></td>
   </tr>
 <% end %>
 </table>

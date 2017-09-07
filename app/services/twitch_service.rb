@@ -4,7 +4,7 @@ class TwitchService
   end
 
   def self.current_users_profile_info(user_token)
-    new.current_users_profile_info
+    new.current_users_profile_info(user_token)
   end
 
   def self.users_channel_follows(user_token, username)

@@ -10,33 +10,30 @@
   </head>
 
   <body>
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <div class="row">
-            <div class="col s2">
-              <img class="palp-logo" src="https://fontmeme.com/permalink/170907/3866ede16270b89edc6ef410f8f94195.png" alt="twitch-logo-font" border="0" width="75%">
-            </div>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="<%#= games_path %>">Browse</a></li>
-                <% if current_user %>
-                  <li><a href="<%#= follows_path(current_user) %>">Following</a></li>
-                <% end %>
-                <li><a href="">Search</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-              <% if current_user %>
-                <li><a href=""></a><%#= current_users_profile.profile_pic %></li>
-                <li><a href=""></a><%#= current_users_profile.username %></li>
-                <li><a href=""></a>Logout</li>
-              <% else %>
-                <li><a href=""></a>Login</li>
-              <% end %>
-            </ul>
+    <nav class="navbar-fixed">
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col s2">
+            <img class="palp-logo" src="https://fontmeme.com/permalink/170907/3866ede16270b89edc6ef410f8f94195.png" alt="palpit8.tv-logo" width="75%">
           </div>
+          <ul class="left hide-on-med-and-down">
+              <li><%= link_to "Browse", games_path %></li>
+              <% if current_user %>
+                <li><%= link_to "Following", dashboard_path %></li>
+              <% end %>
+              <li><a href="/search"><i class="material-icons left">search</i>Search</i></a></li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <% if current_user %>
+              <li><a href="/dashboard"><img src="<%= current_users_profile(current_user.token).profile_pic %>" alt="users_profile_pic"><%= current_users_profile(current_user.token).username %></a></li>
+              <li><a href="/logout"></a>Logout</li>
+            <% else %>
+              <li><a href="/auth/twitch"></a>Login</li>
+            <% end %>
+          </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 

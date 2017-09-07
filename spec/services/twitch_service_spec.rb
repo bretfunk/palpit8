@@ -92,7 +92,7 @@ describe TwitchService do
     it "retrieves a search for channel" do
       VCR.use_cassette("#search_channels") do
         
-        search = TwitchService.new.search_channels(ENV['TOKEN'], "lirik")
+        search = TwitchService.new.search_channels("lirik")
 
         expect(search.class).to eq(Hash)
         expect(search).to have_key(:_total)
@@ -105,7 +105,7 @@ describe TwitchService do
     it "searchs streams" do
       VCR.use_cassette("#search_streams") do
         
-        search2 = TwitchService.new.search_streams(ENV['TOKEN'], 'lirik')
+        search2 = TwitchService.new.search_streams('lirik')
 
         expect(search2.class).to eq(Hash)
         expect(search2).to have_key(:_total)
@@ -130,7 +130,7 @@ describe TwitchService do
     it "retrieves a stream by channel" do
       VCR.use_cassette("#stream_for_channel") do
         
-        stream = TwitchService.new.stream_for_channel(ENV['TOKEN'], 'lirik')
+        stream = TwitchService.new.stream_for_channel('lirik')
 
         expect(stream.class).to eq(Hash)
         expect(stream[:stream]).to have_key(:_id)
@@ -144,7 +144,7 @@ describe TwitchService do
     it "retrieves stream for specific game" do
       VCR.use_cassette("#streams_summary_for_game") do
         
-        stream2 = TwitchService.new.streams_for_game(ENV['TOKEN'], 'hearthstone')
+        stream2 = TwitchService.new.streams_for_game('hearthstone')
 
         expect(stream2.class).to eq(Hash)
         expect(stream2).to have_key(:_total)
@@ -158,7 +158,7 @@ describe TwitchService do
     it "retrieves summary for game" do
       VCR.use_cassette("#streams_for_game") do
         
-        stream3 = TwitchService.new.streams_summary_for_game(ENV['TOKEN'], 'hearthstone')
+        stream3 = TwitchService.new.streams_summary_for_game('hearthstone')
 
         expect(stream3.class).to eq(Hash)
         expect(stream3).to have_key(:channels)

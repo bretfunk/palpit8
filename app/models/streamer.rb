@@ -10,8 +10,7 @@ class Streamer
               :watching_now,
               :total_views
 
-  def initialize(current_user_token, channel_name = "")
-    @user_token     = current_user_token
+  def initialize(channel_name)
     @twitch_service = TwitchService.new
     @channel_name   = channel_name
     @stream_name    = ""
@@ -27,7 +26,7 @@ class Streamer
   end
 
   def compile_stream_page
-    response = @twitch_service.stream_for_channel(user_token, channel_name)
+    response = @twitch_service.stream_for_channel(channel_name)
     @stream_name    = response[:stream][:channel][:status]
     @name           = response[:stream][:channel][:display_name]
     @profile_pic    = response[:stream][:channel][:logo]

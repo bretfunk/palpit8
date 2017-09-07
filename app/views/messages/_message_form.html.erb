@@ -10,5 +10,7 @@
 <% if current_user %>
 <a href="#" class="btn btn-primary" data-send="message">Send</a>
 <% else %>
-  <%= link_to "Login to Chat", "/auth/twitch"  %>
-<% end %>
+  <% unless current_user %>
+    <%= link_to "Login to Chat", "/auth/twitch"  %>
+  <% end %>
+<% end  %>

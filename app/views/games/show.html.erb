@@ -1,7 +1,7 @@
 <div class="divider"></div>
 
   <div class="row">
-      <h4><%= @game_streams.game_name %></h4>
+      <h3><%= @game_streams.game_name %></h3>
    
   </div>
 
@@ -10,7 +10,7 @@
 <div class="row">
   <% @game_streams.streams.each do |stream| %>
     <div class="col s3">
-      <a href="<%= streamer_path(stream.streamer_id) %>"><img src="<%= stream.preview %>" alt="Stream preview"><br>
+      <a href="<%= streamer_path(stream.streamer_id) %>#stream"><img src="<%= stream.preview %>" alt="Stream preview"><br>
         <%= stream.stream_name %><br></a>
       <%= stream.viewers %> viewers on <a href="<%= streamer_path(stream.streamer_id) %>"><%= stream.streamer_name %></a>
     </div>

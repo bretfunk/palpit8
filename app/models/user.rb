@@ -39,6 +39,7 @@ class User < ApplicationRecord
   private
 
   def set_default_role
+    Role.find_or_create_by(name: 'registered_user')
     self.roles << Role.find_by_name('registered_user')
   end
 end

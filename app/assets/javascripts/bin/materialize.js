@@ -1891,7 +1891,6 @@ if (Vel) {
        * @type {jQuery}
        */
       this.$el = $el;
-
       /**
        * Options for the modal
        * @member Modal#options

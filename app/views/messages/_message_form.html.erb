@@ -7,10 +7,9 @@
   <%#= f.submit 'Send', class: 'btn btn-primary', data: {send: 'message'} %>
 <% end %>
 
-<% if current_user %>
+<br>
   <a class="btn btn-primary" data-send="message">Send</a>
 <% else %>
   <% unless current_user %>
     <%= link_to "Login to Chat", "/auth/twitch"  %>
   <% end %>
-<% end  %>

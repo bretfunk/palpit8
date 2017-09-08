@@ -1,8 +1,8 @@
+<body>
 <div class="divider"></div>
 
-  <div class="row">
-      <h3><%= @game_streams.game_name %></h3>
-   
+  <div class="show-header">
+      <%= @game_streams.game_name %>
   </div>
 
 <div class="divider"></div><br>
@@ -17,5 +17,5 @@
   <% end %>
 </div>
 
-<h5>Game Discussion</h5>
 <%= render partial: 'chatrooms/show' %>
+</body>

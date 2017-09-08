@@ -6,8 +6,6 @@ About:
 
 Palpit8 is a clone of Twitch.tv that analyzes chatroom data of gamer streams through the Watson Tone Analyzer and returns real-time visualization of the mood of a chatroom.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
 ## Environment Setup:
 

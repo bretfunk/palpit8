@@ -11,8 +11,8 @@ class TwitchService
     new.users_channel_follows(username)
   end
 
-  def self.user_follow_streamers_channel(user_token, username)
-    new.user_follow_streamers_channel(username)
+  def self.user_follow_streamers_channel(user_token, username, channel_name)
+    new.user_follow_streamers_channel(user_token, username, channel_name)
   end
 
   def self.user_unfollow_streamers_channel(user_token, username, channel_name)

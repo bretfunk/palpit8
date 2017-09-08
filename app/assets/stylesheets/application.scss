@@ -55,10 +55,6 @@
   font-family: futura;
 }
 
-#watching_now {
-  color: red;
-}
-
 #nav-profile-pic {
   margin-right: 5px;
 }
@@ -87,4 +83,35 @@
 #channel-name {
   font-size: 2vw;
   text-align: center;
+}
+
+//stream page
+
+#watching-now {
+  color: red;
+  padding-top: 20px;
+}
+
+#total-views {
+  padding-top: 20px;
+}
+
+#stream {
+  background-color: #faf9fa;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+#stream-name {
+  font-size: 2vh;
+  padding-top: 20px;
+}
+
+#streamer-name {
+  font-size: 2vw;
+  font-family: futura;
+}
+
+.game-name {
+  padding-top: 2px;
 }

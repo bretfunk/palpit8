@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :chatrooms, param: :slug
   resources :streamers, only: [:show]
-  resources :follow, only: [:index, :new, :create]
+  resources :follow, only: [:edit]
   resources :games, param: :slug,  only: [:show, :index]
   resources :search, only: [:show, :index]
 

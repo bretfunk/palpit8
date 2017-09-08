@@ -10,30 +10,32 @@
   </head>
 
   <body>
-    <nav class="navbar-fixed">
-      <div class="nav-wrapper">
-        <div class="row">
-          <div class="col s2">
-            <a href="<%= games_path %>"><img class="palp-logo" src="https://fontmeme.com/permalink/170907/3866ede16270b89edc6ef410f8f94195.png" alt="palpit8.tv-logo" width="75%"></a>
-          </div>
-          <ul class="left hide-on-med-and-down">
-              <li><%= link_to "Browse", games_path %></li>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="row">
+            <div class="col s2">
+              <a href="<%= games_path %>"><img class="palp-logo" src="https://fontmeme.com/permalink/170907/3866ede16270b89edc6ef410f8f94195.png" alt="palpit8.tv-logo" width="75%"></a>
+            </div>
+            <ul class="left hide-on-med-and-down">
+                <li><%= link_to "Browse", games_path %></li>
+                <% if current_user %>
+                  <li><%= link_to "Following", dashboard_path %></li>
+                <% end %>
+                <li><a href="/search"><i class="material-icons left">search</i>Search</i></a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
               <% if current_user %>
-                <li><%= link_to "Following", dashboard_path %></li>
+                <li><a href="/dashboard"><img id="nav-profile-pic" src="<%= current_users_profile(current_user.token)[:logo] %>" alt="users profile picture" width="40px" height="40px"><%= current_users_profile(current_user.token)[:display_name] %></a></li>
+                <li><%= link_to "Logout", logout_path %></li>
+              <% else %>
+                <li><a href="/auth/twitch">Login</a></li>
               <% end %>
-              <li><a href="/search"><i class="material-icons left">search</i>Search</i></a></li>
-          </ul>
-          <ul class="right hide-on-med-and-down">
-            <% if current_user %>
-              <li><a href="/dashboard"><img id="nav-profile-pic" src="<%= current_users_profile(current_user.token)[:logo] %>" alt="users profile picture" width="40px" height="40px"><%= current_users_profile(current_user.token)[:display_name] %></a></li>
-              <li><%= link_to "Logout", logout_path %></li>
-            <% else %>
-              <li><a href="/auth/twitch">Login</a></li>
-            <% end %>
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
     <%= yield %>
   </body>
 

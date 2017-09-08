@@ -29,15 +29,21 @@ class Streamer
 
   def compile_stream_page
     response = @twitch_service.stream_for_channel(channel_name)
-    @stream_name    = response[:stream][:channel][:status]
-    @name           = response[:stream][:channel][:display_name]
-    @profile_pic    = response[:stream][:channel][:logo]
-    @banner_picture = response[:stream][:channel][:profile_banner]
-    @banner_color   = response[:stream][:channel][:profile_banner_background_color]
-    @followers      = num_cleaner(response[:stream][:channel][:followers])
-    @game_name      = response[:stream][:game]
-    @watching_now   = num_cleaner(response[:stream][:viewers])
-    @total_views    = num_cleaner(response[:stream][:channel][:views])
+    if response[:stream] != nil
+      assign_stream_details(response)
+    end
+  end
+
+  def assign_stream_details(stream_info)
+    @stream_name    = stream_info[:stream][:channel][:status]
+    @name           = stream_info[:stream][:channel][:display_name]
+    @profile_pic    = stream_info[:stream][:channel][:logo]
+    @banner_picture = stream_info[:stream][:channel][:profile_banner]
+    @banner_color   = stream_info[:stream][:channel][:profile_banner_background_color]
+    @followers      = num_cleaner(stream_info[:stream][:channel][:followers])
+    @game_name      = stream_info[:stream][:game]
+    @watching_now   = num_cleaner(stream_info[:stream][:viewers])
+    @total_views    = num_cleaner(stream_info[:stream][:channel][:views])
   end
 
   private

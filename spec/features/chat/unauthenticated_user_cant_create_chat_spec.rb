@@ -8,6 +8,5 @@ RSpec.feature 'User sends a chat message' do
     visit("/games/#{game.slug}")
 
     expect(page).to have_content("Login to Chat")
-    expect(page).to_not have_content("Send")
   end
 end

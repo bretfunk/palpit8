@@ -1,1 +1,10 @@
-<h1>Dashboard</h1>
+<div id="profile"class= "row">
+  <img class="col s2 push-s1" src="<%= @profile.logo %>" alt="<%= @profile.username %>'s profile picture" width="100%">
+  <div class="col s6 push-s1">
+    <p class="profile-name"><%= @profile.username %>'s Profile</p>
+    <div class="profile-bio">
+      <p><strong>Bio:</strong></p>
+      <p><%= @profile.bio %></p>
+    </div>
+  </div>
+</div>

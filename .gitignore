@@ -8,10 +8,10 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-!/log/twitch_chat.log
 /log/*
 /tmp/*
 !/log/.keep
+!/log/twitch_chat.log
 !/tmp/.keep
 
 /node_modules

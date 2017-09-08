@@ -4,28 +4,36 @@ Warning, this application could contain material unsuitable for some audiences. 
 
 About:
 
-Palpit8 is
+Palpit8 is a clone of Twitch.tv that analyzes chatroom data of gamer streams through the Watson Tone Analyzer and returns real-time visualization of the mood of a chatroom.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## Environment Setup:
 
-* Ruby version
-2.4.1
+* Ruby 2.4.1
 
-* System dependencies
+* Rails 5.1.3
 
-* Configuration
+* Redis
 
-* Database creation
+* Sidekiq
 
-* Database initialization
+* RSpec/Capybara/Shoulda-matchers
 
-* How to run the test suite
+### How to get everything running:
 
-* Services (job queues, cache servers, search engines, etc.)
+* Clone down the project and `bundle`
 
-* Deployment instructions
+* In order to get the Redis server running `brew install redis`
+* Once Redis is installed, use `redis-server` to boot it up
 
-* ...
+* Once Redis is started, initiate Sidekiq jobs with `bundle exec sidekiq`
+
+* `rails s` to start the Rails server
+
+* Visit localhost:3000
+
+### Testing Suite
+
+* In order to run testing, simply type `rspec` in the terminal

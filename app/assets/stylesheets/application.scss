@@ -70,6 +70,63 @@ body {
   font-family: futura;
 }
 
-#watching_now {
+#nav-profile-pic {
+  margin-right: 5px;
+}
+
+//dashboard
+
+#profile {
+  margin-top: 1%;
+}
+
+.profile-bio {
+  font-size: 2vw;
+  font-family: futura;
+}
+
+.profile-name {
+  font-size: 4vw;
+  font-family: futura;
+}
+
+#follow-channel {
+  text-align: center;
+  font-family: futura;
+}
+
+#channel-name {
+  font-size: 2vw;
+  text-align: center;
+}
+
+//stream page
+
+#watching-now {
   color: red;
+  padding-top: 20px;
+}
+
+#total-views {
+  padding-top: 20px;
+}
+
+#stream {
+  background-color: #faf9fa;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+#stream-name {
+  font-size: 2vh;
+  padding-top: 20px;
+}
+
+#streamer-name {
+  font-size: 2vw;
+  font-family: futura;
+}
+
+.game-name {
+  padding-top: 2px;
 }

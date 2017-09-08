@@ -1,0 +1,38 @@
+<div class="row">
+   <form class="col s12">
+     <div class="row">
+       <div class="input-field col s6">
+         <i class="material-icons prefix">games</i>
+         <input id="icon_games" type="text" class="validate">
+         <label for="icon_games">Games</label>
+       </div>
+       <div class="input-field col s6">
+         <i class="material-icons prefix">personal_video</i>
+         <input id="icon_channels" type="tel" class="validate">
+         <label for="icon_channels">Channels</label>
+       </div>
+       <div class="input-field col s6">
+         <i class="material-icons prefix">play_circle_filled</i>
+         <input id="icon_streams" type="tel" class="validate">
+         <label for="icon_streams">Streams</label>
+       </div>
+     </div>
+   </form>
+ </div>
+
+
+<div class="container">
+  <div class="divider"></div>
+  <div class="type-search">
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:query, "Please choose a category to search") %><br>
+      <%= radio_button_tag(:type, "game") %>
+      <%= label_tag(:type_game,  "Games") %>
+      <%= radio_button_tag(:type, "channel") %>
+      <%= label_tag(:type_channel, "Channel") %>
+      <%= radio_button_tag(:type, "stream") %>
+      <%= label_tag(:type_stream, "Stream") %>
+      <%= text_field_tag(:query) %>
+    <% end %>
+  </div>
+</div>

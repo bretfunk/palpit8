@@ -8,3 +8,22 @@
     </div>
   </div>
 </div>
+
+<div class="divider"></div>
+
+<h4 id="follow-channel">Followed Channels</h4>
+
+<div class="container">
+  <div class="row">
+  <% @profile.channels.each do |channel| %>
+    <div class="col s3">
+      <a href="/streamers/<%= channel.channel_id %>">
+        <img src="<%= channel.logo %>" alt="profile-logo" width="100%">
+        <p id="channel-name"><%= channel.name %></p>
+      </a>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="divider"></div>

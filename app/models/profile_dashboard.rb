@@ -28,7 +28,7 @@ class ProfileDashboard
   def establish_channel_follows
     responses = @twitch_service.users_channel_follows(user_token, user_id)[:follows]
     @channels = responses.map do |follow|
-      Channel.new(follow)
+      Channel.new(follow[:channel])
     end
   end
 

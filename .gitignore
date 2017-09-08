@@ -13,6 +13,7 @@
 !/log/.keep
 !/log/twitch_chat.log
 !/tmp/.keep
+!/log/twitch_chat.log
 
 /node_modules
 /yarn-error.log

@@ -142,7 +142,7 @@ describe TwitchService do
 
   context "#streams_for_game" do
     it "retrieves stream for specific game" do
-      VCR.use_cassette("#streams_summary_for_game") do
+      VCR.use_cassette("#streams_for_game") do
         
         stream2 = TwitchService.new.streams_for_game('hearthstone')
 
@@ -154,9 +154,9 @@ describe TwitchService do
     end
   end
 
-  context "#streams_for_game" do
+  context "#streams_summary_for_game" do
     it "retrieves summary for game" do
-      VCR.use_cassette("#streams_for_game") do
+      VCR.use_cassette("#streams_summary_for_game") do
         
         stream3 = TwitchService.new.streams_summary_for_game('hearthstone')
 

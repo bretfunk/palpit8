@@ -63,41 +63,41 @@ class TwitchService
     new.current_users_followed_streams
   end
 
+  def dynamic_get_request(attrs)
+    @conn.get do |req|
+      req.url                        "/kraken/#{attrs[:url]}"
+      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
+      req.headers['Authorization'] = header(user_token)
+    end
+  end
+
+  def header(user_token = nil)
+    if user_token
+      "OAuth #{user_token}"
+    else
+      ENV['TWITCH_CLIENT_SECRET']
+    end
+  end
+
   #user info requests
 
   def current_users_profile_info(user_token)
-    response = @conn.get do |req|
-      req.url                      "/kraken/user"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
-    end
+    response = dynamic_request({ :url => "user", :user_token => user_token })
     user_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def current_users_channel_info(user_token)
-    response = @conn.get do |req|
-      req.url                      "/kraken/channel"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
-    end
+    response = dynamic_request({ :url => "channel", :user_token => user_token })
     channel_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def users_channel_follows(user_token, username)
-    response = @conn.get do |req|
-      req.url                      "/kraken/users/#{username}/follows/channels"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
-    end
+    response = dynamic_request({ :url => "users/#{username}/follows/channels", :user_token => user_token })
     follow_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def users_followed_streams(user_token)
-    response = @conn.get do |req|
-      req.url                      "/kraken/streams/followed"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
-    end
+    response = dynamic_request({ :url => "streams/followed", :user_token => user_token })
     followed_streams = JSON.parse(response.body, symbolize_names: true)
   end
 
@@ -122,87 +122,51 @@ class TwitchService
   #channel requests
 
   def stream_for_channel(channel_name)
-    response = @conn.get do |req|
-      req.url                      "/kraken/channels/#{channel_name}"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = ENV['TWITCH_CLIENT_SECRET']
-    end
+    response = dynamic_request({ :url => "channels/#{channel_name}")
     channel_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def channel_followers(user_token, channel_name)
-    response = @conn.get do |req|
-      req.url                      "/kraken/channels/#{channel_name}/follows"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
-    end
+    response = dynamic_request({ :url => "channels/#{channel_name}/follows", :user_token => user_token })
     channels_follower_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def channel_subscribers(user_token, channel_name)
-    response = @conn.get do |req|
-      req.url                      "/kraken/channels/#{channel_name}/subscriptions"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = "OAuth #{user_token}"
-    end
+    response = dynamic_request({ :url => "channels/#{channel_name}/subscriptions", :user_token => user_token })
     channels_subscriber_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   #search requests
 
   def search_channels(query)
-    response = @conn.get do |req|
-      req.url                      "/kraken/search/channels?query=#{query}"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = ENV['TWITCH_CLIENT_SECRET']
-    end
+    response = dynamic_request({ :url => "search/channels?query=#{query}" })
     search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   def search_streams(query)
-    response = @conn.get do |req|
-      req.url                      "/kraken/search/streams?query=#{query}"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = ENV['TWITCH_CLIENT_SECRET']
-    end
+    response = dynamic_request({ :url => "search/streams?query=#{query}" })
     search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   def search_games(query)
-    response = @conn.get do |req|
-      req.url                      "/kraken/search/games?query=#{query}"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = ENV['TWITCH_CLIENT_SECRET']
-    end
+    response = dynamic_request({ :url => "search/games?query=#{query}" })
     search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   #stream requests
 
   def stream_for_channel(channel_name)
-    response = @conn.get do |req|
-      req.url                      "/kraken/streams/#{channel_name}"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = ENV['TWITCH_CLIENT_SECRET']
-    end
+    response = dynamic_request({ :url => "streams/#{channel_name}" })
     stream = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_for_game(game_name, quantity = 4)
-    response = @conn.get do |req|
-      req.url                      "/kraken/streams/?game=#{game_name}&limit=#{quantity}&language=en"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = ENV['TWITCH_CLIENT_SECRET']
-    end
+    response = dynamic_request({ :url => "streams/?game=#{game_name}&limit=#{quantity}&language=en" })
     streams = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_summary_for_game(game_name)
-    response = @conn.get do |req|
-      req.url                      "/kraken/streams/summary/?game=#{game_name}"
-      req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = ENV['TWITCH_CLIENT_SECRET']
-    end
+    response = dynamic_request({ :url => "streams/summary/?game=#{game_name}" })
     streams_summary = JSON.parse(response.body, symbolize_names: true)
   end
 end

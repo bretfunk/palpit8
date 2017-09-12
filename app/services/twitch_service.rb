@@ -67,7 +67,7 @@ class TwitchService
     @conn.get do |req|
       req.url                        "/kraken/#{attrs[:url]}"
       req.headers['Client-ID']     = ENV['TWITCH_CLIENT_ID']
-      req.headers['Authorization'] = header(user_token)
+      req.headers['Authorization'] = header(attrs[:user_token])
     end
   end
 
@@ -82,22 +82,22 @@ class TwitchService
   #user info requests
 
   def current_users_profile_info(user_token)
-    response = dynamic_request({ :url => "user", :user_token => user_token })
+    response = dynamic_get_request({ :url => "user", :user_token => user_token })
     user_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def current_users_channel_info(user_token)
-    response = dynamic_request({ :url => "channel", :user_token => user_token })
+    response = dynamic_get_request({ :url => "channel", :user_token => user_token })
     channel_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def users_channel_follows(user_token, username)
-    response = dynamic_request({ :url => "users/#{username}/follows/channels", :user_token => user_token })
+    response = dynamic_get_request({ :url => "users/#{username}/follows/channels", :user_token => user_token })
     follow_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def users_followed_streams(user_token)
-    response = dynamic_request({ :url => "streams/followed", :user_token => user_token })
+    response = dynamic_get_request({ :url => "streams/followed", :user_token => user_token })
     followed_streams = JSON.parse(response.body, symbolize_names: true)
   end
 
@@ -122,51 +122,51 @@ class TwitchService
   #channel requests
 
   def stream_for_channel(channel_name)
-    response = dynamic_request({ :url => "channels/#{channel_name}")
+    response = dynamic_get_request({ :url => "channels/#{channel_name}" })
     channel_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def channel_followers(user_token, channel_name)
-    response = dynamic_request({ :url => "channels/#{channel_name}/follows", :user_token => user_token })
+    response = dynamic_get_request({ :url => "channels/#{channel_name}/follows", :user_token => user_token })
     channels_follower_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   def channel_subscribers(user_token, channel_name)
-    response = dynamic_request({ :url => "channels/#{channel_name}/subscriptions", :user_token => user_token })
+    response = dynamic_get_request({ :url => "channels/#{channel_name}/subscriptions", :user_token => user_token })
     channels_subscriber_info = JSON.parse(response.body, symbolize_names: true)
   end
 
   #search requests
 
   def search_channels(query)
-    response = dynamic_request({ :url => "search/channels?query=#{query}" })
+    response = dynamic_get_request({ :url => "search/channels?query=#{query}" })
     search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   def search_streams(query)
-    response = dynamic_request({ :url => "search/streams?query=#{query}" })
+    response = dynamic_get_request({ :url => "search/streams?query=#{query}" })
     search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   def search_games(query)
-    response = dynamic_request({ :url => "search/games?query=#{query}" })
+    response = dynamic_get_request({ :url => "search/games?query=#{query}" })
     search_results = JSON.parse(response.body, symbolize_names: true)
   end
 
   #stream requests
 
   def stream_for_channel(channel_name)
-    response = dynamic_request({ :url => "streams/#{channel_name}" })
+    response = dynamic_get_request({ :url => "streams/#{channel_name}" })
     stream = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_for_game(game_name, quantity = 4)
-    response = dynamic_request({ :url => "streams/?game=#{game_name}&limit=#{quantity}&language=en" })
+    response = dynamic_get_request({ :url => "streams/?game=#{game_name}&limit=#{quantity}&language=en" })
     streams = JSON.parse(response.body, symbolize_names: true)
   end
 
   def streams_summary_for_game(game_name)
-    response = dynamic_request({ :url => "streams/summary/?game=#{game_name}" })
+    response = dynamic_get_request({ :url => "streams/summary/?game=#{game_name}" })
     streams_summary = JSON.parse(response.body, symbolize_names: true)
   end
 end

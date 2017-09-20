@@ -140,17 +140,17 @@ class TwitchService
 
   def search_channels(query)
     response = dynamic_get_request({ :url => "search/channels?query=#{query}" })
-    search_results = JSON.parse(response.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)[:channels]
   end
 
   def search_streams(query)
     response = dynamic_get_request({ :url => "search/streams?query=#{query}" })
-    search_results = JSON.parse(response.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)[:streams]
   end
 
   def search_games(query)
     response = dynamic_get_request({ :url => "search/games?query=#{query}" })
-    search_results = JSON.parse(response.body, symbolize_names: true)
+    search_results = JSON.parse(response.body, symbolize_names: true)[:games]
   end
 
   #stream requests

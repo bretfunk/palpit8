@@ -9,12 +9,18 @@ Rails.application.routes.draw do
     resources :chatrooms
   end
 
+  namespace :search do
+    resources :games, only: [:index]
+    resources :channels, only: [:index]
+    resources :streams, only: [:index]
+  end
+
   resources :messages
   resources :chatrooms, param: :slug
   resources :streamers, only: [:show]
   resources :follow, only: [:edit]
   resources :games, param: :slug,  only: [:show, :index]
-  resources :search, only: [:show, :index]
+  resources :search, only: [:index]
 
   mount ActionCable.server => '/cable'
 

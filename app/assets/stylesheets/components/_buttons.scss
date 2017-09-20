@@ -27,7 +27,7 @@
 .btn-large[disabled],
 .btn-flat[disabled] {
   pointer-events: none;
-  background-color: $button-disabled-background !important;
+  background-color: #4b367c;
   box-shadow: none;
   color: $button-disabled-color !important;
   cursor: default;
@@ -64,7 +64,7 @@
 .btn {
   text-decoration: none;
   color: $button-raised-color;
-  background-color: $button-raised-background;
+  background-color: #FF2F2F;
   text-align: center;
   letter-spacing: .5px;
   @extend .z-depth-1;
@@ -72,7 +72,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $button-raised-background-hover;
+    background-color: #4b367c;
     @extend .z-depth-1-half;
   }
 }

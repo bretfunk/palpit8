@@ -2,24 +2,29 @@
   <h3>Please choose a category to search</h3>
   <div class="container">
     <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s8 push-s2">
-            <i class="material-icons prefix">games</i>
-            <input id="icon_games" type="text">
-            <label for="icon_games">Games</label>
-          </div>
-          <div class="input-field col s8 push-s2">
-            <i class="material-icons prefix">personal_video</i>
-            <input id="icon_channels" type="text">
-            <label for="icon_channels">Channels</label>
-          </div>
-          <div class="input-field col s8 push-s2">
-            <i class="material-icons prefix">play_circle_filled</i>
-            <input id="icon_streams" type="text">
-            <label for="icon_streams">Streams</label>
-          </div>
+      <form action="/search/games" method="get" class="col s12">
+        <div class="input-field col s8 push-s2">
+          <i class="material-icons prefix">games</i>
+          <input name="query" id="icon_games" type="text">
+          <label for="icon_games">Games</label>
         </div>
+        <button class="hide" type="button">Submit</button>
+      </form>
+      <form action="/search/channels" method="get" class="col s12">
+        <div class="input-field col s8 push-s2">
+          <i class="material-icons prefix">personal_video</i>
+          <input name="query" id="icon_channels" type="text">
+          <label for="icon_channels">Channels</label>
+        </div>
+        <button class="hide" type="button">Submit</button>
+      </form>
+      <form action="/search/streams" method="get" class="col s12">
+        <div class="input-field col s8 push-s2">
+          <i class="material-icons prefix">play_circle_filled</i>
+          <input name="query" id="icon_streams" type="text">
+          <label for="icon_streams">Streams</label>
+        </div>
+        <button class="hide" type="button">Submit</button>
       </form>
     </div>
   </div>

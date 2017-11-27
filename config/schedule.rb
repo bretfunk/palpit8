@@ -5,7 +5,6 @@
 
 # Example:
 #
-set :output, "log/cron_log.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -18,7 +17,4 @@ set :output, "log/cron_log.log"
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.minute do
-  runner "DashboardController.new.show"
-end
 

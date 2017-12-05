@@ -29,6 +29,7 @@ gem 'redis', '~> 3.0'
 gem 'faker'
 gem 'materialize-sass'
 gem 'turbolinks', '~> 5.0'
+gem 'aws-sdk-s3'
 
 
 group :test do

@@ -17,7 +17,6 @@ RSpec.feature 'User sends a chat message' do
     .and_return(user)
 
     visit("/games/#{game.slug}")
-    save_and_open_page
 
     fill_in 'message[content]', with: 'Something'
     click_on 'Send'
